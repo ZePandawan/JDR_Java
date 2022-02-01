@@ -1,4 +1,4 @@
-public class infos_perso {
+public class infos_persos {
 	String nom;
 	int classe;
 	int age;
@@ -7,7 +7,7 @@ public class infos_perso {
 	int stats3;
 	String [] inventory;
 
-	public infos_perso() {
+	public infos_persos() {
 		// TODO Auto-generated constructor stub
 	}
 
