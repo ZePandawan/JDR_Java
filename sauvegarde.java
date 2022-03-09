@@ -1,3 +1,8 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+
 public class sauvegarde {
     private String nom;
 	private String classe;
@@ -19,6 +24,14 @@ public class sauvegarde {
             Competence_2 = save.getComp2();
             Competence_3 = save.getComp3();
             inventory = save.getInv();
+        }
+
+        public void inFile() throws FileNotFoundException, UnsupportedEncodingException
+        {
+            PrintWriter writer = new PrintWriter("mon-fichier.txt", "UTF-8");
+            writer.println("La première ligne");
+            writer.println("La deuxième ligne");
+            writer.close();
         }
 
 
