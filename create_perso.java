@@ -1,15 +1,14 @@
 import java.util.Scanner;
 
 public class create_perso {
-	String name_aventurier;
-	int age;
-	String race;
-	String classe;
-	String [] tab_classe = {"Guerrier", "Barde", "Lutteur", "Roublard","Rodeur","Mage","Archer","Barbare"} ;
-	String [] tab_race = {"Hobbit","Humain","Elfe","Nain","Ent","Malar","Orque","Uruk-hai","Nazgul","Gobelin","Troll"} ;
+	private String name_aventurier;
+	private int age;
+	private String race;
+	private String classe;
+	private String [] tab_classe = {"Guerrier", "Barde", "Lutteur", "Roublard","Rodeur","Mage","Archer","Barbare"} ;
+	private String [] tab_race = {"Hobbit","Humain","Elfe","Nain","Ent","Malar","Orque","Uruk-hai","Nazgul","Gobelin","Troll"} ;
 	
 	public create_perso() {
-		// TODO Auto-generated constructor stub
 		System.out.println("Bonjour Cher Joueur ! \n ");
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
@@ -73,7 +72,7 @@ public class create_perso {
 	
 	
 	public String toString() {
-		return this.name_aventurier + " " + this.age + " " + this.race;
+		return this.name_aventurier + " " + this.age + " " + this.race + " " + this.classe;
 	}
 
 }
