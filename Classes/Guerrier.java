@@ -1,6 +1,6 @@
 package Classes;
 
-public class Guerrier{
+public class Guerrier extends infos_persos{
 	
 	public Guerrier()
 	{
