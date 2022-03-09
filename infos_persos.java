@@ -1,12 +1,12 @@
 public class infos_persos {
-	private String nom;
-	private String classe;
-	private String race;
-	private int age;
-	private String Competence_1;
-	private String Competence_2;
-	private String Competence_3;
-	private String [] inventory;
+	private String nom = "titi";
+	private String classe = "toto";
+	private String race = "titi";
+	private int age = 69;
+	private String Competence_1 = "69";
+	private String Competence_2 = "vutgv"; 
+	private String Competence_3 = "izebth";
+	private String [] inventory = {"uyiegrb","iquyzrg"};
 
 	public infos_persos() {
 		

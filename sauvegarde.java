@@ -29,8 +29,13 @@ public class sauvegarde {
         public void inFile() throws FileNotFoundException, UnsupportedEncodingException
         {
             PrintWriter writer = new PrintWriter("mon-fichier.txt", "UTF-8");
-            writer.println("La première ligne");
-            writer.println("La deuxième ligne");
+            writer.println(nom);
+            writer.println(classe);
+            writer.println(race);
+            writer.println(age);
+            writer.println(Competence_1);
+            writer.println(Competence_2);
+            writer.println(Competence_3);
             writer.close();
         }
 
