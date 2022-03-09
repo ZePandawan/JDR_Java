@@ -25,13 +25,13 @@ public class Classes{
    
     	//--------------------------------------------------------------------------------------------------------------------------------------------------\\
    
-    String Apptitude_1 = "Bouclier Divin";
+    String Aptitude_1 = "Bouclier Divin";
     String Description_App_1 = "Sur un jet de Mental réussi, le personne se voit attribué un bouclier magique lui permettant d'absorber un coup";
-    int Apptitude_1_mana = 1;
+    int Aptitude_1_mana = 1;
 
-    String Apptitude_2 = "Attaque Multiples";
+    String Aptitude_2 = "Attaque Multiples";
     String Description_App_2 = "Sur un jet de Physique réussi, le personne peut attaquer plusieurs cibles à la fois (-10% pour chaque ennemi ciblé)";
-    int Apptitude_2_mana = 0;
+    int Aptitude_2_mana = 0;
    
     	//--------------------------------------------------------------------------------------------------------------------------------------------------\\
    
@@ -69,13 +69,13 @@ public class Classes{
    
       //--------------------------------------------------------------------------------------------------------------------------------------------------\\
    
-    String Apptitude_1 = "Allié Involotaire";
+    String Aptitude_1 = "Allié Involotaire";
     String Description_App_1 = "Le personnage cible un ennemi, celui ci est considéré comme allié du personnage pendant 3 tours";
-    int Apptitude_1_mana = 1;
+    int Aptitude_1_mana = 1;
 
-    String Apptitude_2 = "Cri Perçant";
+    String Aptitude_2 = "Cri Perçant";
     String Description_App_2 = "Inflige des dégâts aux ennemis et étourdi les ennemis";
-    int Apptitude_2_mana = 1;
+    int Aptitude_2_mana = 1;
    
       //--------------------------------------------------------------------------------------------------------------------------------------------------\\
    
@@ -113,13 +113,13 @@ public class Classes{
    
       //--------------------------------------------------------------------------------------------------------------------------------------------------\\
    
-    String Apptitude_1 = "KO";
+    String Aptitude_1 = "KO";
     String Description_App_1 = "Le personnage peut porter une attaque dévastatrice qui met immédiatement la cible KO (Utilisable 1 fois par jour)";
-    int Apptitude_1_mana = 1;
+    int Aptitude_1_mana = 1;
 
-    String Apptitude_2 = "Déluge de coups";
+    String Aptitude_2 = "Déluge de coups";
     String Description_App_2 = "Le personnage peut effectuer un déluge de coups sur un ennemi";
-    int Apptitude_2_mana = 0;
+    int Aptitude_2_mana = 0;
    
       //--------------------------------------------------------------------------------------------------------------------------------------------------\\
    
@@ -156,13 +156,13 @@ public class Classes{
    
       //--------------------------------------------------------------------------------------------------------------------------------------------------\\
    
-    String Apptitude_1 = "Fin Observateur";
+    String Aptitude_1 = "Fin Observateur";
     String Description_App_1 = "Permet au personnage de trouver une objet secret ou caché (Il peut s'agir d'une porte ou un piège)";
-    int Apptitude_1_mana = 0;
+    int Aptitude_1_mana = 0;
 
-    String Apptitude_2 = "Attaque Sanglante";
+    String Aptitude_2 = "Attaque Sanglante";
     String Description_App_2 = "Cette aptitude permet au personnage de faire saigner la victime de son attaque. Chaque Round la cible subit des dégâts";
-    int Apptitude_2_mana = 1;
+    int Aptitude_2_mana = 1;
    
       //--------------------------------------------------------------------------------------------------------------------------------------------------\\
    
@@ -199,13 +199,13 @@ public class Classes{
    
       //--------------------------------------------------------------------------------------------------------------------------------------------------\\
    
-    String Apptitude_1 = "Tir rapide";
+    String Aptitude_1 = "Tir rapide";
     String Description_App_1 = "Le personnage tire 3 flèches à la suite sur un ennemi";
-    int Apptitude_1_mana = 0;
+    int Aptitude_1_mana = 0;
 
-    String Apptitude_2 = "Arme Boomerang";
+    String Aptitude_2 = "Arme Boomerang";
     String Description_App_2 = "Le personnage peut lancer une dague ou autre type d'arme, celle-ci reviendra à lui à la fin du tour";
-    int Apptitude_2_mana = 1;
+    int Aptitude_2_mana = 1;
    
       //--------------------------------------------------------------------------------------------------------------------------------------------------\\
    
@@ -242,13 +242,13 @@ public class Classes{
    
       //--------------------------------------------------------------------------------------------------------------------------------------------------\\
    
-    String Apptitude_1 = "Puit de Mana";
+    String Aptitude_1 = "Puit de Mana";
     String Description_App_1 = "Le personnage médite pour un certain temps, ce qui lui redonne un de la Mana (Impossible en combat)";
-    int Apptitude_1_mana = 0;
+    int Aptitude_1_mana = 0;
 
-    String Apptitude_2 = "Boule de feu";
+    String Aptitude_2 = "Boule de feu";
     String Description_App_2 = "Le personnage lance une boule de feu vers un ennemi lui infligeant des dégâts et avec une change de 10% d'enflammer l'ennemi";
-    int Apptitude_2_mana = 1;
+    int Aptitude_2_mana = 1;
    
       //--------------------------------------------------------------------------------------------------------------------------------------------------\\
    
@@ -285,13 +285,13 @@ public class Classes{
    
       //--------------------------------------------------------------------------------------------------------------------------------------------------\\
    
-    String Apptitude_1 = "Triple-shot";
+    String Aptitude_1 = "Triple-shot";
     String Description_App_1 = "Le personnage arme 3 flèches sur son arc afin de tirer dans une zone plus grande";
-    int Apptitude_1_mana = 0;
+    int Aptitude_1_mana = 0;
 
-    String Apptitude_2 = "Tir chargé";
+    String Aptitude_2 = "Tir chargé";
     String Description_App_2 = "Le personnage charge son épée d'une force magique, augmentant fortement les dégâts à l'impact";
-    int Apptitude_2_mana = 1;
+    int Aptitude_2_mana = 1;
    
       //--------------------------------------------------------------------------------------------------------------------------------------------------\\
    
@@ -329,13 +329,13 @@ public class Classes{
    
       //--------------------------------------------------------------------------------------------------------------------------------------------------\\
    
-    String Apptitude_1 = "Rage Sanguinaire";
+    String Aptitude_1 = "Rage Sanguinaire";
     String Description_App_1 = "Le personnage rentre dans une rage augmentant fortement sa puissance de combat (utilisable 1 fois par combat)";
-    int Apptitude_1_mana = 0;
+    int Aptitude_1_mana = 0;
 
-    String Apptitude_2 = "Déplacement Accéléré";
+    String Aptitude_2 = "Déplacement Accéléré";
     String Description_App_2 = "Le personnage se déplace plus rapidement";
-    int Apptitude_2_mana = 1;
+    int Aptitude_2_mana = 1;
    
       //--------------------------------------------------------------------------------------------------------------------------------------------------\\
    
