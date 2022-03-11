@@ -1,6 +1,7 @@
-package Personnage;
+package src.Personnage;
 
-import Classes.*;
+import src.Classes.*;
+import src.Classes.Archer;
 
 public class Personnage {
 	

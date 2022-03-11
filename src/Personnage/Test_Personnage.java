@@ -1,4 +1,4 @@
-package Personnage;
+package src.Personnage;
 
 public class Test_Personnage {
 	public static void main(String[] args)
