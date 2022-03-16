@@ -1,5 +1,5 @@
 public class infos_persos {
-	private String nom = "titi";
+	protected String nom ;
 	private String classe = "toto";
 	private String race = "titi";
 	private int age = 69;
@@ -50,6 +50,47 @@ public class infos_persos {
 	public String [] getInv()
 	{
 		return this.inventory;
+	}
+
+
+	public void setNom(String NewNom)
+	{
+		nom = NewNom;
+	}
+
+	public void setClasse(String classe)
+	{
+		this.classe = classe;
+	}
+
+	public void setRace(String race)
+	{
+		this.race = race;
+	}
+
+	public void setAge(int age)
+	{
+		this.age = age;
+	}
+
+	public void setComp1(String Competence_1)
+	{
+		this.Competence_1 = Competence_1;
+	}
+
+	public void setComp2(String Competence_2)
+	{
+		this.Competence_2 = Competence_2;
+	}
+
+	public void setComp3(String Competence_3)
+	{
+		this.Competence_3 = Competence_3;
+	}
+
+	public void setInv(String [] inventory)
+	{
+		this.inventory = inventory;
 	}
 
 

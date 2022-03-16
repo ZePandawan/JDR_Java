@@ -61,6 +61,10 @@ public class sauvegarde {
                 writer.close();
 
             }
+            else if(resultatEnregistrer == JFileChooser.CANCEL_OPTION)
+            {
+                System.out.println("Vous avez décidé de ne pas enregistrer votre progression");
+            }
 
             
         }

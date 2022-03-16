@@ -67,6 +67,14 @@ public class create_perso {
 		// Age aventurier
 		System.out.println("Quel est votre age "+ this.name_aventurier + " ? ");
 		this.age = scanner.nextInt();
+
+		infos_persos update_info = new infos_persos();
+		update_info.setAge(age);
+		update_info.setNom(name_aventurier);
+		update_info.setClasse(classe);
+		update_info.setRace(race);
+		String testUwU = update_info.getNom();
+		System.out.println(testUwU);
 		
 	}
 	
