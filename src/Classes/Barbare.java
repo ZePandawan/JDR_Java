@@ -1,32 +1,12 @@
-package src.Classes;
+package Classes;
 
-public class Barbare {
+public class Barbare extends Classe {
 	
-	private int Physique = 85;
-	private int Social = 30;
-	private int Mental = 55;
-	private int Sante = 16;
-	private int Mana = 4;
-	
-	public int getPhysique()
-	{
-		return Physique;
+	public Barbare() {
+		Physique = 85;
+		Social = 30;
+		Mental = 55;
+		Sante = 16;
+		Mana = 4;
 	}
-	
-	public int getSocial(){
-		return Social;
-	}
-	
-	public int getMental(){
-		return Mental;
-	}
-	
-	public int getSante() {
-		return Sante;
-	}
-	
-	public int getMana() {
-		return Mana;
-	}
-	
 }

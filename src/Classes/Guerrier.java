@@ -1,31 +1,12 @@
-package src.Classes;
+package Classes;
 
-public class Guerrier {
+public class Guerrier extends Classe {
 	
-	private int Physique = 75;
-	private int Social = 55;
-	private int Mental = 40;
-	private int Sante = 18;
-	private int Mana = 2;
-	
-	public int getPhysique(){
-		return Physique;
+	public Guerrier() {
+		Physique = 75;
+		Social = 55;
+		Mental = 40;
+		Sante = 18;
+		Mana = 2;
 	}
-	
-	public int getSocial(){
-		return Social;
-	}
-	
-	public int getMental(){
-		return Mental;
-	}
-	
-	public int getSante() {
-		return Sante;
-	}
-	
-	public int getMana() {
-		return Mana;
-	}
-	
 }

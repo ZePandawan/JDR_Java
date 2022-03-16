@@ -1,31 +1,12 @@
-package src.Classes;
+package Classes;
 
-public class Archer  {
-
-    private int Physique = 65;
-    private int Social = 50;
-    private int Mental = 55;
-	private int Sante = 14;
-	private int Mana = 6;
+public class Archer extends Classe {
 	
-	public int getPhysique()
-	{
-		return Physique;
-	}
-	
-	public int getSocial(){
-		return Social;
-	}
-	
-	public int getMental(){
-		return Mental;
-	}
-	
-	public int getSante() {
-		return Sante;
-	}
-	
-	public int getMana() {
-		return Mana;
+	public Archer() {
+		Physique = 65;
+		Social = 50;
+		Mental = 55;
+		Sante = 14;
+		Mana = 6;
 	}
 }

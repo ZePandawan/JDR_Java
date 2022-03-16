@@ -1,7 +1,7 @@
-package src.Personnage;
+package Personnage;
 
-import src.Classes.*;
-import src.Classes.Archer;
+import Classes.*;
+import Races.*;
 
 public class Personnage {
 	
@@ -11,6 +11,11 @@ public class Personnage {
 	
 	private int Sante = 0;
 	private int Mana = 0;
+	
+	private String CompetenceBonus;
+	private String CompetenceMalus;
+	private int BonusCompetence;
+	private int MalusCompetence;
 	
 	public Personnage(int race_choisie) {
 			
@@ -78,9 +83,7 @@ public class Personnage {
 			this.Mental = new Barbare().getMental();
 			this.Sante = new Barbare().getSante();
 			this.Mana = new Barbare().getMana();
-			break;
-			
-		
+			break;	
 		}
 	}
 	
