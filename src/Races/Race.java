@@ -1,6 +1,0 @@
-package Races;
-
-
-public class Race {
-	
-}
