@@ -1,4 +1,12 @@
 package Monstres;
 
-public class Orque {
+public class Orque extends Monstre {
+
+    public Orque() {
+
+        sante = 40;
+
+        Attaques.add("Coup d'épée");
+        Attaques.add("Tir de flèches");
+    }
 }
