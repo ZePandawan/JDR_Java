@@ -4,7 +4,7 @@ public class Orque extends Monstre {
 
     public Orque() {
 
-        sante = 40;
+        Sante = 40;
 
         Attaques.add("Coup d'épée");
         Attaques.add("Tir de flèches");
