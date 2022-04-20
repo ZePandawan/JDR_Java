@@ -6,6 +6,6 @@ public class Gollum extends Monstre {
         Sante = 35;
 
         Attaques.add("Etranglement");
-        Attaques.add("Griffures");
+        Attaques.add("Griffure");
     }
 }
