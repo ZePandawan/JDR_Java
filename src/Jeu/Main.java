@@ -1,6 +1,7 @@
 package Jeu;
 
 import Commandes.*;
+import Monstres.*;
 
 public class Main {
 
@@ -10,7 +11,6 @@ public class Main {
 		//Lancement du jeu
 		Commande.DebutJeu();
 		Commande.NettoyerConsole();
-		
 		
 	}
 

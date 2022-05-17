@@ -1,4 +1,5 @@
 package Classes;
+import Equipements.*;
 
 public class Mage extends Classe{
 	
@@ -9,9 +10,15 @@ public class Mage extends Classe{
 		Sante = 8;
 		Mana = 12;
 		
-		Attaques.add("Coup de baton");
-		Attaques.add("Boule de Feu");
-		Attaques.add("Éclair");
-		Attaques.add("Libération de Chaos");
+		Arme = new Baton();
+		Armure = new Armuredesoie();
+		
+		Description = "Le mage utilise ses sorts afin de carboniser ses ennemis";
+		
 	} 
+	
+	@Override
+	public int getClasseDegats() {
+		return Math.max(0, (int) (Math.random() * 10) - 7);
+	}
 }

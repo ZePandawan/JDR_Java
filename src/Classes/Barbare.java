@@ -1,4 +1,5 @@
 package Classes;
+import Equipements.*;
 
 public class Barbare extends Classe {
 	
@@ -9,9 +10,14 @@ public class Barbare extends Classe {
 		Sante = 16;
 		Mana = 4;
 		
-		Attaques.add("Coup Foudrayant");
-		Attaques.add("Coup de Hache");
-		Attaques.add("Lancer de Hache");
-		Attaques.add("Rage du Berserk");
+		Arme = new Hachedouble();
+		Armure = new Armuredecuir();
+		
+		Description = "Le barbare est un guerrier sanguinaire utilisant principalement une hache à deux mains.";
+	}
+	
+	@Override
+	public int getClasseDegats() {
+		return Math.max(0, (int) (Math.random() * 10) - 2);
 	}
 }

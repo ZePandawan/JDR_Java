@@ -1,6 +1,7 @@
 package Commandes;
 
-import Joueur.Joueur;
+import Joueur.*;
+import Monstres.*;
 
 public class Jeu extends Interface {
 	
@@ -37,5 +38,48 @@ public class Jeu extends Interface {
 		
 		//Création d'un nouveau Personnage
 		joueur = new Joueur(nom);
+		
+		Araignee a1 = new Araignee();
+		MenuCombat(joueur, a1);
+	}
+	
+	public void Combat(Joueur joueur, Monstre ennemi)
+	{
+		System.out.println("Début de l'attaque ");
+		joueur.Attaque(ennemi);
+		StopProgramme();
+		if(ennemi.getSante() <= 0) {
+			System.out.println("Le monstre est mort ! Vous êtes victorieux !!!");
+			joueur.Recapitulatif();
+			return;
+		}
+		else
+		{
+			ennemi.Attaque(joueur);
+			StopProgramme();
+			if(joueur.getHp() <= 0) {
+				System.out.println("Le montre à réussi a vous tuer... Game Over !");
+				joueur.Recapitulatif();
+				return;
+			}
+		}
+		MenuCombat(joueur, ennemi);
+	}
+	
+	public void MenuCombat(Joueur joueur, Monstre ennemi) {
+		boolean choixPrit = false;
+		do {
+			System.out.println("Choisissez une action :");
+			System.out.println("[1] : Attaque Physique");
+			System.out.println("[2] : Attaque Magique");
+			System.out.println("[3] : Sac");
+			System.out.println("[4] : Parade / Esquive");
+			int choix = LectureInt("->", 4);
+			
+			if(choix == 1) {
+				Combat(joueur, ennemi);
+			}
+		}while(choixPrit == false);
+		
 	}
 }

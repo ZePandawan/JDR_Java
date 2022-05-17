@@ -1,6 +1,7 @@
 package Classes;
+import Equipements.*;
 
-public class Archer extends Classe {
+public class Archer extends Classe{
 	
 	public Archer() {
 		Physique = 65;
@@ -8,10 +9,18 @@ public class Archer extends Classe {
 		Mental = 55;
 		Sante = 14;
 		Mana = 6;
-	
-		Attaques.add("Tir de précision");
-		Attaques.add("Triple Flèches");
-		Attaques.add("Tir Raffale");
-		Attaques.add("Tir Divin");
+		
+		Arme = new Arclong();
+		Armure = new Armuredecuir();
+		
+		Description = "L'archer utilise principalement le tir à distance, il est souvent équipé d'un arc, ou d'une arbalète, lui permettant d'effectuer de lourds dégâts perfforants" ;		
+		
+		
+		
+	}
+
+	@Override
+	public int getClasseDegats() {
+		return Math.max(0, (int) (Math.random() * 10) - 4);
 	}
 }

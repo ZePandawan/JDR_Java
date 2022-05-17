@@ -1,4 +1,5 @@
 package Classes;
+import Equipements.*;
 
 public class Guerrier extends Classe {
 	
@@ -8,10 +9,16 @@ public class Guerrier extends Classe {
 		Mental = 40;
 		Sante = 18;
 		Mana = 2;
+
+		Arme = new Epeelongue();
+		Armure = new Armuredeplaque();
 		
-		Attaques.add("Gantelet d'Argent");
-		Attaques.add("Attaque Rapide");
-		Attaques.add("Attaque Lourde");
-		Attaques.add("Volonté Divine");
+		Description = "Le guerrier est la classe la plus basique, utiliser votre épée longue et votre armure afin de mettre vos ennemis en déroute.";
+		
+	}
+	
+	@Override
+	public int getClasseDegats() {
+		return Math.max(0, (int) (Math.random() * 10) - 3);
 	}
 }

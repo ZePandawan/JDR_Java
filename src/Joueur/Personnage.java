@@ -2,19 +2,17 @@ package Joueur;
 
 import java.util.ArrayList;
 
-public abstract class Personnage {
+import Classes.Classe;
+import Monstres.Monstre;
+import Races.Race;
+
+public class Personnage implements JoueurIntf {
 
 	protected String name;
 	protected int maxHp, hp, exp, mana;
-	protected String Race;
-	protected String Classe;
+	protected Race race;
+	protected Classe classe;
 	
-	protected int Physique;
-	protected int Social;
-	protected int Mental;
-	
-	protected String DescriptionClasse;
-	protected String DescriptionRace;
 	protected ArrayList<String> Attaques = new ArrayList<String>();
 	protected ArrayList<String> Inventaire = new ArrayList<String>();
 	
@@ -23,10 +21,35 @@ public abstract class Personnage {
 		this.maxHp = maxHp;
 		this.exp = exp;
 		this.hp = maxHp;
+	}	
+	
+	public int getHp()
+	{
+		return hp;
 	}
 	
-	//Méthodes communes à tous les Joueurs
-	public abstract int attack();
-	public abstract int defend();
-	
+	public void Attaque(Monstre cible){
+		if(classe.getPhysique() >= (int) Math.random()*100) {
+			cible.Defend(classe.getArmeDegats() + classe.getClasseDegats());
+		}
+		else {
+			System.out.println("Votre attaque n'a pas aboutit");
+		}
+		
+	}
+
+	@Override
+	public void Defense(int degats) {
+		if(classe.getArmure() - degats < 0 )
+		{
+			hp += classe.getArmure() - degats;
+			System.out.println("Vous avez subit :" + (degats - classe.getArmure()) + "dégats." );
+			System.out.println("Points de vie restants : " + hp);
+		}
+		else 
+		{
+			System.out.println("Vous n'avez subit aucun dégat !");
+			System.out.println("Points de vie restants : " + hp);
+		}
+	}
 }

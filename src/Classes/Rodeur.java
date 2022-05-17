@@ -1,4 +1,5 @@
 package Classes;
+import Equipements.*;
 
 public class Rodeur extends Classe {
 	
@@ -9,9 +10,14 @@ public class Rodeur extends Classe {
 		Sante = 16;
 		Mana = 4;
 		
-		Attaques.add("Tir d'Arbalette");
-		Attaques.add("Parade Sanglante");
-		Attaques.add("Tir Nourit");
-		Attaques.add("Bombe explosive");
+		Arme = new Epeecourte();
+		Armure = new Cottedemaille();
+		
+		Description = "Le rodeur est un assassin silencieux, pistant son adversaire pour lui tendre un piège redoutable.";
+	}
+	
+	@Override
+	public int getClasseDegats() {
+		return Math.max(0, (int) (Math.random() * 10) - 4);
 	}
 }
