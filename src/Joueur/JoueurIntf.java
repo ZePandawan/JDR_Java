@@ -1,9 +1,10 @@
 package Joueur;
 
+import Attaque.*;
 import Monstres.Monstre;
 
 public interface JoueurIntf {
 
-	void Attaque(Monstre cible);
+	void AttaqueEnnemi(Monstre cible, Attaque attaque);
 	void Defense(int degats);
 }

@@ -2,6 +2,7 @@ package Joueur;
 
 import java.util.ArrayList;
 
+import Attaque.*;
 import Classes.Classe;
 import Monstres.Monstre;
 import Races.Race;
@@ -21,21 +22,20 @@ public class Personnage implements JoueurIntf {
 		this.maxHp = maxHp;
 		this.exp = exp;
 		this.hp = maxHp;
-	}	
+	}
 	
 	public int getHp()
 	{
 		return hp;
 	}
 	
-	public void Attaque(Monstre cible){
-		if(classe.getPhysique() >= (int) Math.random()*100) {
-			cible.Defend(classe.getArmeDegats() + classe.getClasseDegats());
-		}
-		else {
-			System.out.println("Votre attaque n'a pas aboutit");
-		}
-		
+	public Classe getClasse()
+	{
+		return classe;
+	}
+	
+	public void AttaqueEnnemi(Monstre cible, Attaque attaque){
+		cible.Defend(attaque.ValeurAttaque());
 	}
 
 	@Override

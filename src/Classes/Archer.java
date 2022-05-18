@@ -1,4 +1,7 @@
 package Classes;
+import java.util.ArrayList;
+
+import Attaque.*;
 import Equipements.*;
 
 public class Archer extends Classe{
@@ -15,6 +18,16 @@ public class Archer extends Classe{
 		
 		Description = "L'archer utilise principalement le tir à distance, il est souvent équipé d'un arc, ou d'une arbalète, lui permettant d'effectuer de lourds dégâts perfforants" ;		
 		
+		ArrayList<Attaque> ListeAttaquesPhysiques = new ArrayList<Attaque>();
+		ArrayList<Attaque> ListeAttaquesMagiques = new ArrayList<Attaque>();
+		
+		ListeAttaquesPhysiques.add(new TirSimple(this));
+		ListeAttaquesPhysiques.add(new TirTriple(this));
+		ListeAttaquesMagiques.add(new PassageEnForce(this));
+		ListeAttaquesMagiques.add(new VolonteDivine(this));
+		
+		AttaquesPhysiques = ListeAttaquesPhysiques;
+		AttaquesMagiques = ListeAttaquesMagiques;
 		
 		
 	}

@@ -337,7 +337,7 @@ public class Joueur extends Personnage {
 		System.out.println("Mana : " + mana);
 		System.out.println("Race : " + Races[numeroRace]);
 		System.out.println("Classe : " + Classes[numeroClasse]);
-		System.out.println("Compétences : " + Attaques);
+		System.out.println("Compétences : " + classe.getAttaquesPhysiques().get(0).getNom() + " , " + classe.getAttaquesPhysiques().get(1).getNom() + " , " + classe.getAttaquesMagiques().get(0).getNom() + " , " + classe.getAttaquesMagiques().get(1).getNom());
 		System.out.println("Physique : " + classe.getPhysique());
 		System.out.println("Social : " + classe.getSocial());
 		System.out.println("Mental : " + classe.getMental());

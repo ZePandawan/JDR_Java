@@ -3,6 +3,8 @@ import Equipements.*;
 
 import java.util.ArrayList;
 
+import Attaque.*;
+
 public class Classe{
 	protected int Physique;
     protected int Social;
@@ -15,7 +17,8 @@ public class Classe{
 	
 	protected String Description;
 	
-	protected ArrayList<String> Attaques = new ArrayList<String>();
+	protected ArrayList<Attaque> AttaquesPhysiques;
+	protected ArrayList<Attaque> AttaquesMagiques;
 	
 	public String getDescription() {
 		return Description;
@@ -23,6 +26,10 @@ public class Classe{
 	
 	public int getPhysique() {
 		return Physique;
+	}
+	
+	public void setPhysique(int valeur) {
+		Physique = valeur;
 	}
 	
 	public int getSocial() {
@@ -41,6 +48,10 @@ public class Classe{
 		return Mana;
 	}	
 	
+	public void EnleverMana(int value)
+	{
+		Mana -= value;
+	}
 	public int getArmeDegats() {
 		return Arme.getDegat();
 	}
@@ -52,5 +63,14 @@ public class Classe{
 	public int getClasseDegats() {
 		return 0;
 	}
-
+	
+	public ArrayList<Attaque> getAttaquesPhysiques()
+	{
+		return AttaquesPhysiques;
+	}
+	
+	public ArrayList<Attaque> getAttaquesMagiques()
+	{
+		return AttaquesMagiques;
+	}
 }
