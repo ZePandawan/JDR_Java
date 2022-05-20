@@ -46,12 +46,13 @@ public class Jeu extends Interface {
 	
 	public void Combat(Joueur joueur, Monstre ennemi, Attaque attaque)
 	{
+		NettoyerConsole();
 		System.out.println("Début de l'attaque ");
 		System.out.println("Tour du Joueur ! ");
 		
 		joueur.AttaqueEnnemi(ennemi, attaque);
-		
 		StopProgramme();
+		
 		if(ennemi.getSante() <= 0) {
 			System.out.println("Le monstre est mort ! Vous êtes victorieux !!!");
 			joueur.Recapitulatif();
@@ -59,6 +60,8 @@ public class Jeu extends Interface {
 		}
 		else
 		{
+			NettoyerConsole();
+			System.out.println("Tour du monstre ! ");
 			ennemi.Attaque(joueur);
 			StopProgramme();
 			if(joueur.getHp() <= 0) {
@@ -67,12 +70,14 @@ public class Jeu extends Interface {
 				return;
 			}
 		}
+		NettoyerConsole();
 		MenuCombat(joueur, ennemi);
 	}
 	
 	public void MenuCombat(Joueur joueur, Monstre ennemi) {
 		boolean choixPrit = false;
 		do {
+			NettoyerConsole();
 			System.out.println("Choisissez une action :");
 			System.out.println("[1] : Attaque Physique");
 			System.out.println("[2] : Attaque Magique");
@@ -81,9 +86,11 @@ public class Jeu extends Interface {
 			int choix = LectureInt("->", 4);
 			
 			if(choix == 1) {
+				NettoyerConsole();
 				MenuAttaquesPhysiques(joueur, ennemi);
 			}
 			if(choix == 2) {
+				NettoyerConsole();
 				MenuAttaquesMagiques(joueur, ennemi);
 			}
 		}while(choixPrit == false);
@@ -103,15 +110,18 @@ public class Jeu extends Interface {
 			
 			if(choix == 1)
 			{
+				NettoyerConsole();
 				DescriptionAttaquesPhysiques(joueur, ennemi, 1);
 			}
 			
 			if(choix == 2)
 			{
+				NettoyerConsole();
 				DescriptionAttaquesPhysiques(joueur, ennemi, 2);
 			}
 			if(choix == 3)
 			{
+				NettoyerConsole();
 				MenuCombat(joueur, ennemi);
 			}
 		}while(choixAttaque == false);
@@ -138,6 +148,7 @@ public class Jeu extends Interface {
 			}
 			if(choixValidation == 2)
 			{
+				NettoyerConsole();
 				MenuAttaquesPhysiques(joueur, ennemi);
 			}
 		}while(ValidationChoix == false);
@@ -156,15 +167,18 @@ public class Jeu extends Interface {
 			
 			if(choix == 1)
 			{
+				NettoyerConsole();
 				DescriptionAttaquesMagiques(joueur, ennemi, 1);
 			}
 			
 			if(choix == 2)
 			{
+				NettoyerConsole();
 				DescriptionAttaquesMagiques(joueur, ennemi, 2);
 			}
 			if(choix == 3)
 			{
+				NettoyerConsole();
 				MenuCombat(joueur, ennemi);
 			}
 		}while(choixAttaque == false);
@@ -184,6 +198,7 @@ public class Jeu extends Interface {
 				{
 					if(joueur.getClasse().getMana() >=1)
 					{
+						NettoyerConsole();
 						Combat(joueur, ennemi, joueur.getClasse().getAttaquesMagiques().get(0));
 					}
 					else
@@ -196,6 +211,7 @@ public class Jeu extends Interface {
 				{
 					if(joueur.getClasse().getMana() >=2)
 					{
+						NettoyerConsole();
 						Combat(joueur, ennemi, joueur.getClasse().getAttaquesMagiques().get(1));
 					}
 					else
@@ -207,6 +223,7 @@ public class Jeu extends Interface {
 			}
 			if(choixValidation == 2)
 			{
+				NettoyerConsole();
 				MenuAttaquesMagiques(joueur, ennemi);
 			}
 		}while(ValidationChoix == false);

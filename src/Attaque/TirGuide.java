@@ -1,11 +1,11 @@
 package Attaque;
 import Classes.Classe;
 
-public class PassageEnForce extends Attaque {
-	public PassageEnForce(Classe classe) {
+public class TirGuide extends Attaque {
+	public TirGuide(Classe classe) {
 		super(classe);
-		_description = "Utiliser votre magie pour effectuer une charge vers l'ennemi, lui infligeant de lourds dégâts (1 Mana)";
-		_nom = "Passage en force";
+		_description = "Utiliser votre magie pour guider votre flèche directement sur l'ennemi, vous donnant plus de chance de le toucher (1 Mana)";
+		_nom = "Tir Guidé";
 		_type = "Magique";
 	}
 	
@@ -28,4 +28,5 @@ public class PassageEnForce extends Attaque {
 			return 0;
 		}
 	}
+
 }

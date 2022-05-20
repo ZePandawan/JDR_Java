@@ -1,11 +1,11 @@
 package Attaque;
 import Classes.Classe;
 
-public class VolonteDivine extends Attaque {
-	public VolonteDivine(Classe classe) {
+public class AttaqueDesOmbres extends Attaque {
+	public AttaqueDesOmbres(Classe classe) {
 		super(classe);
-		_description = "Une épée de lumière apparait devant vous et est projetée vers l'ennemi. (2 Mana)";
-		_nom = "Volonté Divine";
+		_description = "Créez un clone de vous qui se chargera d'attaquer votre ennemi (2 Mana)";
+		_nom = "Attaque des ombres";
 		_type = "Magique";
 	}
 	
@@ -15,7 +15,7 @@ public class VolonteDivine extends Attaque {
 			System.out.println("Vous n'avez pas assez de mana ! ");
 			return 0;
 		}
-		if((_classe.getMental() - 10)> ((int)Math.random() * 100))
+		if((_classe.getMental() - 10) > ((int)Math.random() * 100))
 		{
 			_classe.EnleverMana(2);
 			_degats = _classe.getClasseDegats() + _classe.getArmeDegatsM() * 2;
@@ -28,5 +28,4 @@ public class VolonteDivine extends Attaque {
 			return 0;
 		}
 	}
-
 }

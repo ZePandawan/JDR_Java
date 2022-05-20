@@ -2,7 +2,8 @@ package Equipements;
 
 public class Lance extends Equipement{
     public Lance() {
-        degat = 4;
+        degatP = 4;
+        degatM = 5;
         armure=0;
         prix = 6;
     }

@@ -1,7 +1,6 @@
 package Jeu;
 
 import Commandes.*;
-import Monstres.*;
 
 public class Main {
 

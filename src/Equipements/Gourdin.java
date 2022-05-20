@@ -2,7 +2,8 @@ package Equipements;
 
 public class Gourdin extends Equipement{
     public Gourdin() {
-        degat = 2;
+        degatP = 3;
+        degatM = 1;
         armure = 0;
         prix = 2;
     }

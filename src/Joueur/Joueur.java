@@ -9,13 +9,11 @@ public class Joueur extends Personnage {
 	
 	Interface Commande = new Interface();
 	
-	private String[] Classes = {"Archer", "Barbare", "Barde", "Guerrier", "Lutteur", "Mage", "Rodeur","Roublard"};
+	private String[] Classes = {"Archer", "Barbare", "Barde", "Guerrier", "Lutteur", "Mage", "Rodeur",};
 	private int numeroClasse;
 	
 	private String[] Races = {"Elfe", "Ent", "Gobelin", "Hobbit", "Humain", "Maiar", "Nain", "Orque"}; 
 	private int numeroRace;
-	
-	private String[] Actions = {"Attaquer", "Lancer un sort", "Se proteger", "Intimider"};
 	
 	boolean classeValide = false;
 	boolean raceValide = false;
@@ -31,7 +29,6 @@ public class Joueur extends Personnage {
 		
 	}
 
-	
 	public void ChoixClasse() {
 		do {
 			Commande.NettoyerConsole();
@@ -171,24 +168,6 @@ public class Joueur extends Personnage {
 					classeValide = true;
 				}
 			}
-			else if(entree == 8) {
-				classe = new Roublard();
-				maxHp = classe.getSante();
-				hp = classe.getSante();
-				mana = classe.getMana();
-				numeroClasse = 7;
-				
-				Commande.AfficherEntete("Vous avez choisi la classe : " +  Classes[7] + "\n " + 
-										classe.getDescription() + "\n " +
-										"Ce choix te convient-il aventurier ?!");
-				System.out.println("(1) Oui !");
-				System.out.println("(2) Non !");
-				int choix = Commande.LectureInt("->", 2);
-				
-				if(choix == 1) {
-					classeValide = true;
-				}
-			}
 		}while(!classeValide);
 	}
 	
@@ -300,21 +279,6 @@ public class Joueur extends Personnage {
 				numeroRace = 6;
 				
 				Commande.AfficherEntete("Vous avez choisi la classe : " + Races[6] + "\n" + 
-										race.getDescription() + "\n" +
-										"Ce choix te convient-il aventurier ?!");
-				System.out.println("(1) Oui ! ");
-				System.out.println("(2) Non ! ");
-				int choix = Commande.LectureInt("->", 2);
-				
-				if(choix ==1) {
-					raceValide = true;
-				}
-			}
-			else if(entree == 8) {
-				race = new Orque();
-				numeroRace = 7;
-				
-				Commande.AfficherEntete("Vous avez choisi la classe : " + Races[7] + "\n" + 
 										race.getDescription() + "\n" +
 										"Ce choix te convient-il aventurier ?!");
 				System.out.println("(1) Oui ! ");

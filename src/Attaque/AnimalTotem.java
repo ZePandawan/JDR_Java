@@ -1,11 +1,11 @@
 package Attaque;
 import Classes.Classe;
 
-public class PassageEnForce extends Attaque {
-	public PassageEnForce(Classe classe) {
+public class AnimalTotem extends Attaque {
+	public AnimalTotem(Classe classe) {
 		super(classe);
-		_description = "Utiliser votre magie pour effectuer une charge vers l'ennemi, lui infligeant de lourds dégâts (1 Mana)";
-		_nom = "Passage en force";
+		_description = "Appelle votre animal totem qui se infligera des dégâts à l'ennemi (1 Mana)";
+		_nom = "Animal Totem";
 		_type = "Magique";
 	}
 	
@@ -18,7 +18,7 @@ public class PassageEnForce extends Attaque {
 		if((_classe.getMental() > ((int)Math.random() * 100)))
 		{
 			_classe.EnleverMana(1);
-			_degats = _classe.getClasseDegats() + _classe.getArmeDegatsM() ;
+			_degats = _classe.getClasseDegats() + _classe.getArmeDegatsM();
 			return _degats;
 		}
 		else
@@ -28,4 +28,5 @@ public class PassageEnForce extends Attaque {
 			return 0;
 		}
 	}
+
 }

@@ -1,11 +1,11 @@
 package Attaque;
 import Classes.Classe;
 
-public class VolonteDivine extends Attaque {
-	public VolonteDivine(Classe classe) {
+public class TremblementTerre extends Attaque {
+	public TremblementTerre(Classe classe) {
 		super(classe);
-		_description = "Une épée de lumière apparait devant vous et est projetée vers l'ennemi. (2 Mana)";
-		_nom = "Volonté Divine";
+		_description = "Concentrer votre mana dans votre poing et frapper le sol pour produire une immence onde de choc. (2 Mana)";
+		_nom = "Tremblement de terre";
 		_type = "Magique";
 	}
 	

@@ -1,11 +1,11 @@
 package Attaque;
 import Classes.Classe;
 
-public class AttaqueSimple extends Attaque {
-	public AttaqueSimple(Classe classe) {
+public class UperCut extends Attaque {
+	public UperCut(Classe classe) {
 		super(classe);
-		_description = "Frapper l'ennemi simplement avec votre arme";
-		_nom = "Attaque Simple";
+		_description = "Infliger un violen upercut à votre adversaire";
+		_nom = "Upercut";
 		_type = "Physique";
 	}
 	

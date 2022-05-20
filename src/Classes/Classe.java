@@ -52,8 +52,12 @@ public class Classe{
 	{
 		Mana -= value;
 	}
-	public int getArmeDegats() {
-		return Arme.getDegat();
+	public int getArmeDegatsP() {
+		return Arme.getDegatP();
+	}
+	
+	public int getArmeDegatsM() {
+		return Arme.getDegatM();
 	}
 	
 	public int getArmure() {

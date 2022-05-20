@@ -23,8 +23,8 @@ public class Archer extends Classe{
 		
 		ListeAttaquesPhysiques.add(new TirSimple(this));
 		ListeAttaquesPhysiques.add(new TirTriple(this));
-		ListeAttaquesMagiques.add(new PassageEnForce(this));
-		ListeAttaquesMagiques.add(new VolonteDivine(this));
+		ListeAttaquesMagiques.add(new TirGuide(this));
+		ListeAttaquesMagiques.add(new TirDuDragon(this));
 		
 		AttaquesPhysiques = ListeAttaquesPhysiques;
 		AttaquesMagiques = ListeAttaquesMagiques;
@@ -34,6 +34,6 @@ public class Archer extends Classe{
 
 	@Override
 	public int getClasseDegats() {
-		return Math.max(0, (int) (Math.random() * 10) - 4);
+		return Math.max(1, (int) (Math.random() * 10) - 4);
 	}
 }

@@ -2,7 +2,8 @@ package Equipements;
 
 public class Epeelongue extends Equipement{
     public Epeelongue() {
-        degat = 4;
+        degatP = 4;
+        degatM = 3;
         armure = 0;
         prix = 8;
     }

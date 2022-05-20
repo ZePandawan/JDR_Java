@@ -5,6 +5,7 @@ import Joueur.Personnage;
 public class Monstre {
     protected int Sante = 0;
     protected int Degats;
+    protected String _type;
 
     protected String Description = "";
 
@@ -34,8 +35,13 @@ public class Monstre {
     
     public void Defend(int degats) {
 			Sante -= degats;
-			System.out.println("Le monstre a subit :" + degats + "dégats." );
-			System.out.println("Points de vie restants : " + Sante);
+			System.out.println("Le monstre a subit : " + degats + " dégats." );
+			System.out.println("Points de vie restants : " + Math.max(0,Sante));
+    }
+    
+    public String getType()
+    {
+    	return _type;
     }
     
     

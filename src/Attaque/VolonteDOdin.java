@@ -1,11 +1,11 @@
 package Attaque;
 import Classes.Classe;
 
-public class VolonteDivine extends Attaque {
-	public VolonteDivine(Classe classe) {
+public class VolonteDOdin extends Attaque {
+	public VolonteDOdin(Classe classe) {
 		super(classe);
-		_description = "Une épée de lumière apparait devant vous et est projetée vers l'ennemi. (2 Mana)";
-		_nom = "Volonté Divine";
+		_description = "Vous recever une puissance surnaturelle et dirigez une éclair foudroyant vers votre ennemi (2 Mana)";
+		_nom = "Volonté d'Odin";
 		_type = "Magique";
 	}
 	
@@ -28,5 +28,4 @@ public class VolonteDivine extends Attaque {
 			return 0;
 		}
 	}
-
 }

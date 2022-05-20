@@ -35,7 +35,16 @@ public class Personnage implements JoueurIntf {
 	}
 	
 	public void AttaqueEnnemi(Monstre cible, Attaque attaque){
-		cible.Defend(attaque.ValeurAttaque());
+		
+		if(cible.getType() == attaque.getType())
+		{
+			cible.Defend(attaque.ValeurAttaque() / 2);
+		}
+		else
+		{
+			cible.Defend(attaque.ValeurAttaque());
+		}
+		
 	}
 
 	@Override

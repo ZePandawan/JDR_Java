@@ -1,11 +1,11 @@
 package Attaque;
 import Classes.Classe;
 
-public class AttaqueCharge extends Attaque{
-	public AttaqueCharge(Classe classe) {
+public class Ruee extends Attaque {
+	public Ruee(Classe classe) {
 		super(classe);
-		_description = "Attaque lourde avec votre arme, attention vous avez plus de chance de rater votre coup";
-		_nom = "Attaque Chargée";
+		_description = "Lancer une ruée sur votre adversaire afin de lui porter un coup au ventre";
+		_nom = "Ruee";
 		_type = "Physique";
 	}
 	

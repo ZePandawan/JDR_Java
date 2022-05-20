@@ -2,7 +2,8 @@ package Equipements;
 
 public class Arclong extends Equipement {
     public Arclong() {
-        degat = 3;
+        degatP = 3;
+        degatM = 3;
         armure = 0;
         prix = 6;
     }

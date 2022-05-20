@@ -1,11 +1,11 @@
 package Attaque;
 import Classes.Classe;
 
-public class PassageEnForce extends Attaque {
-	public PassageEnForce(Classe classe) {
+public class Teleportation extends Attaque {
+	public Teleportation(Classe classe) {
 		super(classe);
-		_description = "Utiliser votre magie pour effectuer une charge vers l'ennemi, lui infligeant de lourds dégâts (1 Mana)";
-		_nom = "Passage en force";
+		_description = "Téléportez vous derrière votre ennemi pour lui asséner un coup perforant avec votre arme (1 Mana)";
+		_nom = "Téléportation";
 		_type = "Magique";
 	}
 	
@@ -28,4 +28,5 @@ public class PassageEnForce extends Attaque {
 			return 0;
 		}
 	}
+
 }

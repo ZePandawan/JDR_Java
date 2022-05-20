@@ -1,11 +1,12 @@
 package Attaque;
-import Classes.*;
+import Classes.Classe;
 
 public class Attaque {
 	
 	protected String _nom;
 	protected String _description;
 	protected int _degats;
+	protected String _type;
 	
 	Classe _classe;
 	
@@ -24,5 +25,9 @@ public class Attaque {
 	
 	public String getDescription() {
 		return _description;
+	}
+	
+	public String getType() {
+		return _type;
 	}
 }

@@ -2,8 +2,9 @@ package Equipements;
 
 public class Baton extends Equipement{
     public Baton() {
-        degat=1;
-        armure=0;
+        degatP = 1;
+        degatM = 5;
+        armure = 0;
         prix = 3;
     }
 }
