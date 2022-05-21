@@ -6,6 +6,7 @@ public class Baton extends Equipement{
         degatM = 5;
         armure = 0;
         prix = 3;
+        nom = "Baton de magicien";
     }
 }
 

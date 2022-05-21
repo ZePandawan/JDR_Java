@@ -6,5 +6,6 @@ public class Arclong extends Equipement {
         degatM = 3;
         armure = 0;
         prix = 6;
+        nom = "Arc long";
     }
 }

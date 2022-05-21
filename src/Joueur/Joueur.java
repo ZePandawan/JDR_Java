@@ -21,291 +21,488 @@ public class Joueur extends Personnage {
 	//Constructeur Joueur
 	public Joueur(String name) {
 		super(name, 100, 0);
+		 
+		_name = name;
 		
-		//Choix de la classe
-		ChoixClasse();
 		ChoixRace();
+		ChoixClasse();
 		Recapitulatif();
 		
 	}
-
-	public void ChoixClasse() {
-		do {
-			Commande.NettoyerConsole();
-			Commande.AfficherEntete("Choisis ta classe Aventurier");
-			for(int i=0; i < Classes.length; i++) {
-				System.out.println("(" + (i+1) + ")" + Classes[i]);
-			}
-			
-			//Choix du joueur :
-			int entree = Commande.LectureInt("->", Classes.length);
-			Commande.NettoyerConsole();
-			
-			//Attribution du choix
-			if(entree == 1) {
+	
+	public void ChoixClasse(){
+		Commande.NettoyerConsole();
+		Commande.AfficherSeparateur(122);
+		System.out.println("\nAragorn : Quel est votre classe de prédilection " + _name + " ?! \n");
+		
+		for(int i=0; i < Classes.length; i++) {
+			System.out.println("[" + (i+1) + "] " + Classes[i]);
+		}
+		System.out.println();
+		
+		Commande.AfficherSeparateur(122);
+		
+		int choix_classe = Commande.LectureInt("->", Classes.length);
+		Commande.NettoyerConsole();
+		
+		switch(choix_classe)
+		{
+			case 1 :
+			{
 				classe = new Archer();
-				maxHp = classe.getSante();
-				hp = classe.getSante();
-				mana = classe.getMana();
+				_maxHp = classe.getSante();
+				_hp = classe.getSante();
+				_mana = classe.getMana();
 				numeroClasse = 0;
 				
-				Commande.AfficherEntete("Vous avez choisi la classe : " +  Classes[0] + "\n " + 
-										classe.getDescription() + "\n " +
-										"Ce choix te convient-il aventurier ?!");
-				System.out.println("(1) Oui !");
-				System.out.println("(2) Non !");
+				Commande.NettoyerConsole();
+				Commande.AfficherEntete(200,
+						  "\nAragorn : Alors comme ça tu es un " +  Classes[0] + "\n" 
+						+ "Aragorn : " + classe.getDescription() + "\n" 
+						+ "Aragorn : En es-tu certains ?\n\n"
+						+ "[1] Oui ! \n"
+						+ "[2] Non ! \n");
 				int choix = Commande.LectureInt("->", 2);
-				
-				if(choix == 1) {
-					classeValide = true;
+
+				switch(choix)
+				{
+					case 1 :
+					{break;}
+					case 2 :
+					{
+						ChoixClasse();
+						break;
+					}
+					default :
+					{}
 				}
+				break;
 			}
-			else if(entree == 2) {
+			case 2 :
+			{
 				classe = new Barbare();
-				maxHp = classe.getSante();
-				hp = classe.getSante();
-				mana = classe.getMana();
-				numeroClasse = 1;
+				_maxHp = classe.getSante();
+				_hp = classe.getSante();
+				_mana = classe.getMana();
+				numeroClasse = 0;
 				
-				Commande.AfficherEntete("Vous avez choisi la classe : " +  Classes[1] + "\n " + 
-										classe.getDescription() + "\n " +
-										"Ce choix te convient-il aventurier ?!");
-				System.out.println("(1) Oui !");
-				System.out.println("(2) Non !");
+				Commande.NettoyerConsole();
+				Commande.AfficherEntete(200,
+						  "\nAragorn : Alors comme ça tu es un " +  Classes[1] + "\n" 
+						+ "Aragorn : " + classe.getDescription() + "\n" 
+						+ "Aragorn : En es-tu certains ?\n\n"
+						+ "[1] Oui ! \n"
+						+ "[2] Non ! \n");
 				int choix = Commande.LectureInt("->", 2);
-				
-				if(choix == 1) {
-					classeValide = true;
+
+				switch(choix)
+				{
+					case 1 :
+					{break;}
+					case 2 :
+					{
+						ChoixClasse();
+						break;
+					}
+					default :
+					{}
 				}
+				break;
 			}
-			else if(entree == 3) {
+			case 3 :
+			{
 				classe = new Barde();
-				maxHp = classe.getSante();
-				hp = classe.getSante();
-				mana = classe.getMana();
-				numeroClasse = 2;
+				_maxHp = classe.getSante();
+				_hp = classe.getSante();
+				_mana = classe.getMana();
+				numeroClasse = 0;
 				
-				Commande.AfficherEntete("Vous avez choisi la classe : " +  Classes[2] + "\n " + 
-										classe.getDescription() + "\n " +
-										"Ce choix te convient-il aventurier ?!");
-				System.out.println("(1) Oui !");
-				System.out.println("(2) Non !");
+				Commande.NettoyerConsole();
+				Commande.AfficherEntete(200,
+						  "\nAragorn : Alors comme ça tu es un " +  Classes[2] + "\n" 
+						+ "Aragorn : " + classe.getDescription() + "\n" 
+						+ "Aragorn : En es-tu certains ?\n\n"
+						+ "[1] Oui ! \n"
+						+ "[2] Non ! \n");
 				int choix = Commande.LectureInt("->", 2);
-				
-				if(choix == 1) {
-					classeValide = true;
+
+				switch(choix)
+				{
+					case 1 :
+					{break;}
+					case 2 :
+					{
+						ChoixClasse();
+						break;
+					}
+					default :
+					{}
 				}
+				break;
 			}
-			else if(entree == 4) {
+			case 4 :
+			{
 				classe = new Guerrier();
-				maxHp = classe.getSante();
-				hp = classe.getSante();
-				mana = classe.getMana();
-				numeroClasse = 3;
+				_maxHp = classe.getSante();
+				_hp = classe.getSante();
+				_mana = classe.getMana();
+				numeroClasse = 0;
 				
-				Commande.AfficherEntete("Vous avez choisi la classe : " +  Classes[3] + "\n " + 
-										classe.getDescription() + "\n " +
-										"Ce choix te convient-il aventurier ?!");
-				System.out.println("(1) Oui !");
-				System.out.println("(2) Non !");
+				Commande.NettoyerConsole();
+				Commande.AfficherEntete(200,
+						  "\nAragorn : Alors comme ça tu es un " +  Classes[3] + "\n" 
+						+ "Aragorn : " + classe.getDescription() + "\n" 
+						+ "Aragorn : En es-tu certains ?\n\n"
+						+ "[1] Oui ! \n"
+						+ "[2] Non ! \n");
 				int choix = Commande.LectureInt("->", 2);
-				
-				if(choix == 1) {
-					classeValide = true;
+
+				switch(choix)
+				{
+					case 1 :
+					{break;}
+					case 2 :
+					{
+						ChoixClasse();
+						break;
+					}
+					default :
+					{}
 				}
+				break;
 			}
-			else if(entree == 5) {
+			case 5 :
+			{
 				classe = new Lutteur();
-				maxHp = classe.getSante();
-				hp = classe.getSante();
-				mana = classe.getMana();
-				numeroClasse = 4;
+				_maxHp = classe.getSante();
+				_hp = classe.getSante();
+				_mana = classe.getMana();
+				numeroClasse = 0;
 				
-				Commande.AfficherEntete("Vous avez choisi la classe : " +  Classes[4] + "\n " + 
-										classe.getDescription() + "\n " +
-										"Ce choix te convient-il aventurier ?!");
-				System.out.println("(1) Oui !");
-				System.out.println("(2) Non !");
+				Commande.NettoyerConsole();
+				Commande.AfficherEntete(200,
+						  "\nAragorn : Alors comme ça tu es un " +  Classes[4] + "\n" 
+						+ "Aragorn : " + classe.getDescription() + "\n" 
+						+ "Aragorn : En es-tu certains ?\n\n"
+						+ "[1] Oui ! \n"
+						+ "[2] Non ! \n");
 				int choix = Commande.LectureInt("->", 2);
-				
-				if(choix == 1) {
-					classeValide = true;
+
+				switch(choix)
+				{
+					case 1 :
+					{break;}
+					case 2 :
+					{
+						ChoixClasse();
+						break;
+					}
+					default :
+					{}
 				}
+				break;
 			}
-			else if(entree == 6) {
+			case 6 :
+			{
 				classe = new Mage();
-				maxHp = classe.getSante();
-				hp = classe.getSante();
-				mana = classe.getMana();
-				numeroClasse = 5;
+				_maxHp = classe.getSante();
+				_hp = classe.getSante();
+				_mana = classe.getMana();
+				numeroClasse = 0;
 				
-				Commande.AfficherEntete("Vous avez choisi la classe : " +  Classes[5] + "\n " + 
-										classe.getDescription() + "\n " +
-										"Ce choix te convient-il aventurier ?!");
-				System.out.println("(1) Oui !");
-				System.out.println("(2) Non !");
+				Commande.NettoyerConsole();
+				Commande.AfficherEntete(200,
+						  "\nAragorn : Alors comme ça tu es un " +  Classes[5] + "\n" 
+						+ "Aragorn : " + classe.getDescription() + "\n" 
+						+ "Aragorn : En es-tu certains ?\n\n"
+						+ "[1] Oui ! \n"
+						+ "[2] Non ! \n");
 				int choix = Commande.LectureInt("->", 2);
-				
-				if(choix == 1) {
-					classeValide = true;
+
+				switch(choix)
+				{
+					case 1 :
+					{break;}
+					case 2 :
+					{
+						ChoixClasse();
+						break;
+					}
+					default :
+					{}
 				}
+				break;
 			}
-			else if(entree == 7) {
+			case 7 :
+			{
 				classe = new Rodeur();
-				maxHp = classe.getSante();
-				hp = classe.getSante();
-				mana = classe.getMana();
-				numeroClasse = 6;
+				_maxHp = classe.getSante();
+				_hp = classe.getSante();
+				_mana = classe.getMana();
+				numeroClasse = 0;
 				
-				Commande.AfficherEntete("Vous avez choisi la classe : " +  Classes[6] + "\n " + 
-										classe.getDescription() + "\n " +
-										"Ce choix te convient-il aventurier ?!");
-				System.out.println("(1) Oui !");
-				System.out.println("(2) Non !");
+				Commande.NettoyerConsole();
+				Commande.AfficherEntete(200,
+						  "\nAragorn : Alors comme ça tu es un " +  Classes[6] + "\n" 
+						+ "Aragorn : " + classe.getDescription() + "\n" 
+						+ "Aragorn : En es-tu certains ?\n\n"
+						+ "[1] Oui ! \n"
+						+ "[2] Non ! \n");
 				int choix = Commande.LectureInt("->", 2);
-				
-				if(choix == 1) {
-					classeValide = true;
+
+				switch(choix)
+				{
+					case 1 :
+					{break;}
+					case 2 :
+					{
+						ChoixClasse();
+						break;
+					}
+					default :
+					{}
 				}
+				break;
 			}
-		}while(!classeValide);
+		}
 	}
-	
-	public void ChoixRace() {
-		do {
-			Commande.NettoyerConsole();
-			Commande.AfficherEntete("Choisis ta Race Aventurier");
-			for(int i=0; i < Races.length; i++) {
-				System.out.println("(" + (i+1) + ")" + Races[i]);
-			}
-			
-			//Choix du joueur :
-			int entree = Commande.LectureInt("->", Races.length);
-			Commande.NettoyerConsole();
-			
-			//Attribution du choix
-			if(entree == 1) {
+
+	public void ChoixRace()
+	{
+		Commande.NettoyerConsole();
+		Commande.AfficherSeparateur(122);
+		System.out.println("\nAragorn : Votre apparence ne m'est pas familière, quel est votre ethnie " + _name + " ?! \n");
+		
+		for(int i=0; i < Races.length; i++) {
+			System.out.println("[" + (i+1) + "] " + Races[i]);
+		}
+		System.out.println();
+		Commande.AfficherSeparateur(122);
+		
+		int choix_race = Commande.LectureInt("->", Races.length);
+		
+		Commande.NettoyerConsole();
+		
+		switch(choix_race)
+		{
+			case 1 :
+			{
 				race = new Elfe();
 				numeroRace = 0;
 				
-				Commande.AfficherEntete("Vous avez choisi la classe : " + Races[0] + "\n" + 
-										race.getDescription() + "\n" +
-										"Ce choix te convient-il aventurier ?!");
-				System.out.println("(1) Oui ! ");
-				System.out.println("(2) Non ! ");
+				Commande.NettoyerConsole();
+				Commande.AfficherEntete(200,
+						  "\nAragorn : Alors comme ça tu es un " +  Races[0] + "\n" 
+						+ "Aragorn : De ce que je connais, " + race.getDescription() + "\n" 
+						+ "Aragorn : Est-ce bien cela ?\n\n"
+						+ "[1] Oui ! \n"
+						+ "[2] Non ! \n");
 				int choix = Commande.LectureInt("->", 2);
-				
-				if(choix ==1) {
-					raceValide = true;
+
+				switch(choix)
+				{
+					case 1 :
+					{break;}
+					case 2 :
+					{
+						ChoixRace();
+						break;
+					}
+					default :
+					{}
 				}
+				break;
 			}
-			else if(entree == 2) {
+			case 2 :
+			{
 				race = new Ent();
-				numeroRace = 1;
+				numeroRace = 0;
 				
-				Commande.AfficherEntete("Vous avez choisi la classe : " + Races[1] + "\n" + 
-										race.getDescription() + "\n" +
-										"Ce choix te convient-il aventurier ?!");
-				System.out.println("(1) Oui ! ");
-				System.out.println("(2) Non ! ");
+				Commande.NettoyerConsole();
+				Commande.AfficherEntete(200,
+						  "\nAragorn : Alors comme ça tu es un " +  Races[1] + "\n" 
+						+ "Aragorn : De ce que je connais, " + race.getDescription() + "\n" 
+						+ "Aragorn : Est-ce bien cela ?\n\n"
+						+ "[1] Oui ! \n"
+						+ "[2] Non ! \n");
 				int choix = Commande.LectureInt("->", 2);
-				
-				if(choix ==1) {
-					raceValide = true;
+
+				switch(choix)
+				{
+					case 1 :
+					{break;}
+					case 2 :
+					{
+						ChoixRace();
+						break;
+					}
+					default :
+					{}
 				}
+				break;
 			}
-			else if(entree == 3) {
+			case 3 :
+			{
 				race = new Gobelin();
-				numeroRace = 2;
+				numeroRace = 0;
 				
-				Commande.AfficherEntete("Vous avez choisi la classe : " + Races[2] + "\n" + 
-										race.getDescription() + "\n" +
-										"Ce choix te convient-il aventurier ?!");
-				System.out.println("(1) Oui ! ");
-				System.out.println("(2) Non ! ");
+				Commande.NettoyerConsole();
+				Commande.AfficherEntete(200,
+						  "\nAragorn : Alors comme ça tu es un " +  Races[2] + "\n" 
+						+ "Aragorn : De ce que je connais, " + race.getDescription() + "\n" 
+						+ "Aragorn : Est-ce bien cela ?\n\n"
+						+ "[1] Oui ! \n"
+						+ "[2] Non ! \n");
 				int choix = Commande.LectureInt("->", 2);
-				
-				if(choix ==1) {
-					raceValide = true;
+
+				switch(choix)
+				{
+					case 1 :
+					{break;}
+					case 2 :
+					{
+						ChoixRace();
+						break;
+					}
+					default :
+					{}
 				}
+				break;
 			}
-			else if(entree == 4) {
+			case 4 :
+			{
 				race = new Hobbit();
-				numeroRace = 3;
+				numeroRace = 0;
 				
-				Commande.AfficherEntete("Vous avez choisi la classe : " + Races[3] + "\n" + 
-										race.getDescription() + "\n" +
-										"Ce choix te convient-il aventurier ?!");
-				System.out.println("(1) Oui ! ");
-				System.out.println("(2) Non ! ");
+				Commande.NettoyerConsole();
+				Commande.AfficherEntete(200,
+						  "\nAragorn : Alors comme ça tu es un " +  Races[3] + "\n" 
+						+ "Aragorn : De ce que je connais, " + race.getDescription() + "\n" 
+						+ "Aragorn : Est-ce bien cela ?\n\n"
+						+ "[1] Oui ! \n"
+						+ "[2] Non ! \n");
 				int choix = Commande.LectureInt("->", 2);
-				
-				if(choix ==1) {
-					raceValide = true;
+
+				switch(choix)
+				{
+					case 1 :
+					{break;}
+					case 2 :
+					{
+						ChoixRace();
+						break;
+					}
+					default :
+					{}
 				}
+				break;
 			}
-			else if(entree == 5) {
+			case 5 :
+			{
 				race = new Humain();
-				numeroRace = 4;
+				numeroRace = 0;
 				
-				Commande.AfficherEntete("Vous avez choisi la classe : " + Races[4] + "\n" + 
-										race.getDescription() + "\n" +
-										"Ce choix te convient-il aventurier ?!");
-				System.out.println("(1) Oui ! ");
-				System.out.println("(2) Non ! ");
+				Commande.NettoyerConsole();
+				Commande.AfficherEntete(200,
+						  "\nAragorn : Alors comme ça tu es un " +  Races[4] + "\n" 
+						+ "Aragorn : De ce que je connais, " + race.getDescription() + "\n" 
+						+ "Aragorn : Est-ce bien cela ?\n\n"
+						+ "[1] Oui ! \n"
+						+ "[2] Non ! \n");
 				int choix = Commande.LectureInt("->", 2);
-				
-				if(choix ==1) {
-					raceValide = true;
+
+				switch(choix)
+				{
+					case 1 :
+					{break;}
+					case 2 :
+					{
+						ChoixRace();
+						break;
+					}
+					default :
+					{}
 				}
+				break;
 			}
-			else if(entree == 6) {
+			case 6 :
+			{
 				race = new Maiar();
-				numeroRace = 5;
+				numeroRace = 0;
 				
-				Commande.AfficherEntete("Vous avez choisi la classe : " + Races[5] + "\n" + 
-										race.getDescription() + "\n" +
-										"Ce choix te convient-il aventurier ?!");
-				System.out.println("(1) Oui ! ");
-				System.out.println("(2) Non ! ");
+				Commande.NettoyerConsole();
+				Commande.AfficherEntete(200,
+						  "\nAragorn : Alors comme ça tu es un " +  Races[5] + "\n" 
+						+ "Aragorn : De ce que je connais, " + race.getDescription() + "\n" 
+						+ "Aragorn : Est-ce bien cela ?\n\n"
+						+ "[1] Oui ! \n"
+						+ "[2] Non ! \n");
 				int choix = Commande.LectureInt("->", 2);
-				
-				if(choix ==1) {
-					raceValide = true;
+
+				switch(choix)
+				{
+					case 1 :
+					{break;}
+					case 2 :
+					{
+						ChoixRace();
+						break;
+					}
+					default :
+					{}
 				}
+				break;
 			}
-			else if(entree == 7) {
-				race = new Nain();
-				numeroRace = 6;
+			case 7 :
+			{
+				race = new Orque();
+				numeroRace = 0;
 				
-				Commande.AfficherEntete("Vous avez choisi la classe : " + Races[6] + "\n" + 
-										race.getDescription() + "\n" +
-										"Ce choix te convient-il aventurier ?!");
-				System.out.println("(1) Oui ! ");
-				System.out.println("(2) Non ! ");
+				Commande.NettoyerConsole();
+				Commande.AfficherEntete(200,
+						  "\nAragorn : Alors comme ça tu es un " +  Races[6] + "\n" 
+						+ "Aragorn : De ce que je connais, " + race.getDescription() + "\n" 
+						+ "Aragorn : Est-ce bien cela ?\n\n"
+						+ "[1] Oui ! \n"
+						+ "[2] Non ! \n");
 				int choix = Commande.LectureInt("->", 2);
-				
-				if(choix ==1) {
-					raceValide = true;
+
+				switch(choix)
+				{
+					case 1 :
+					{break;}
+					case 2 :
+					{
+						ChoixRace();
+						break;
+					}
+					default :
+					{}
 				}
+				break;
 			}
-		}while(!raceValide);
+		}
 	}
 
 	public void Recapitulatif() {
 		Commande.NettoyerConsole();
-		Commande.AfficherSeparateur(30);
-		System.out.println("Voici un récapitulatif de votre personnage");
-		System.out.println("Nom : " + name);
-		System.out.println("Vie : " + hp);
-		System.out.println("Mana : " + mana);
-		System.out.println("Race : " + Races[numeroRace]);
-		System.out.println("Classe : " + Classes[numeroClasse]);
-		System.out.println("Compétences : " + classe.getAttaquesPhysiques().get(0).getNom() + " , " + classe.getAttaquesPhysiques().get(1).getNom() + " , " + classe.getAttaquesMagiques().get(0).getNom() + " , " + classe.getAttaquesMagiques().get(1).getNom());
-		System.out.println("Physique : " + classe.getPhysique());
-		System.out.println("Social : " + classe.getSocial());
-		System.out.println("Mental : " + classe.getMental());
-		Commande.AfficherSeparateur(30);
+		Commande.AfficherEntete(122,
+				  "\nAragorn : Bien ! Nous avons fini votre contrat... Jetez-y un oeil " + _name + " !\n\n"
+				+ "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   \n"
+				+ "                                                    RECRUE DE GUERRE                                                     \n\n"
+				+ "     Nom : " + _name + "\n"																								
+				+ "     Vie : " + _hp + "\n"
+				+ "     Mana : " + _mana + "\n"
+				+ "    \n"
+				+ "     Race : " + Races[numeroRace] + "\n"
+				+ "     Classe : " + Classes[numeroClasse] + "\n"
+				+ "     Compétences : " + classe.getAttaquesPhysiques().get(0).getNom() + " , " + classe.getAttaquesPhysiques().get(1).getNom() + " , " + classe.getAttaquesMagiques().get(0).getNom() + " , " + classe.getAttaquesMagiques().get(1).getNom() + "\n"
+				+ "    \n"
+				+ "     Physique : " + classe.getPhysique() + "\n"
+				+ "     Social : " + classe.getSocial() + "\n"
+				+ "     Mental : " + classe.getMental() + "\n"
+				+ "    \n"
+				+ "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		Commande.StopProgramme();
 		
 	}

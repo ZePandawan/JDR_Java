@@ -6,6 +6,7 @@ public class Equipement implements EquipementIntf {
     protected int degatM;
     protected int armure;
     protected int prix;
+    protected String nom;
     
     public int getPrix() {
     	return prix;
@@ -19,6 +20,11 @@ public class Equipement implements EquipementIntf {
     }
     public int getArmure() {
         return armure;
+    }
+    
+    public String getNom()
+    {
+    	return nom;
     }
     
     public void setDegatP(int degat) {

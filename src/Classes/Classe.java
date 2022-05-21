@@ -64,6 +64,11 @@ public class Classe{
 		return Armure.getArmure();
 	}
 
+	public Equipement getArme()
+	{
+		return Arme;
+	}
+	
 	public int getClasseDegats() {
 		return 0;
 	}

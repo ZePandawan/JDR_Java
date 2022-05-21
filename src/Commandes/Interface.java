@@ -22,7 +22,7 @@ public class Interface {
 	}
 
 	public void NettoyerConsole() {
-		for(int i = 0; i<15; i++) {
+		for(int i = 0; i<5; i++) {
 			System.out.println();
 		}
 	}
@@ -34,14 +34,14 @@ public class Interface {
 		System.out.println();
 	}
 	
-	public void AfficherEntete(String titre) {
-		AfficherSeparateur(30);
+	public void AfficherEntete(int nombre, String titre) {
+		AfficherSeparateur(nombre);
 		System.out.println(titre);
-		AfficherSeparateur(30);
+		AfficherSeparateur(nombre);
 	}
 	
 	public void StopProgramme() {
-		System.out.println("\n Entrer quelque chose pour continuer...");
+		System.out.print("\n Entrer 'a' pour continuer : ");
 		scanner.next();
 	}
 

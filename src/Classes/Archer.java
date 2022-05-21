@@ -16,7 +16,7 @@ public class Archer extends Classe{
 		Arme = new Arclong();
 		Armure = new Armuredecuir();
 		
-		Description = "L'archer utilise principalement le tir à distance, il est souvent équipé d'un arc, ou d'une arbalète, lui permettant d'effectuer de lourds dégâts perfforants" ;		
+		Description = "L'archer utilise principalement le tir à distance, il est souvent équipé d'un arc ou d'une arbalète, lui permettant d'effectuer de lourds dégâts perforants" ;		
 		
 		ArrayList<Attaque> ListeAttaquesPhysiques = new ArrayList<Attaque>();
 		ArrayList<Attaque> ListeAttaquesMagiques = new ArrayList<Attaque>();

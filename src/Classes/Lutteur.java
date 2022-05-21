@@ -16,7 +16,7 @@ public class Lutteur extends Classe {
 		Arme = new Coupdepoing();
 		Armure = new Armuredecuir();
 		
-		Description = "Le lutteur est une classe légère se servant de ses poing pour porter de lègéres et lourdes attaques sur ses adversaires.";
+		Description = "Le lutteur est une classe légère se servant de ses poings pour porter de lègéres et lourdes attaques sur ses adversaires.";
 		
 		ArrayList<Attaque> ListeAttaquesPhysiques = new ArrayList<Attaque>();
 		ArrayList<Attaque> ListeAttaquesMagiques = new ArrayList<Attaque>();

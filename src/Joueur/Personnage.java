@@ -2,15 +2,15 @@ package Joueur;
 
 import java.util.ArrayList;
 
-import Attaque.*;
+import Attaque.Attaque;
 import Classes.Classe;
 import Monstres.Monstre;
 import Races.Race;
 
 public class Personnage implements JoueurIntf {
 
-	protected String name;
-	protected int maxHp, hp, exp, mana;
+	protected String _name;
+	protected int _maxHp, _hp, _exp, _mana;
 	protected Race race;
 	protected Classe classe;
 	
@@ -18,15 +18,20 @@ public class Personnage implements JoueurIntf {
 	protected ArrayList<String> Inventaire = new ArrayList<String>();
 	
 	public Personnage(String name, int maxHp, int exp) {
-		this.name = name;
-		this.maxHp = maxHp;
-		this.exp = exp;
-		this.hp = maxHp;
+		_name = name;
+		_maxHp = maxHp;
+		_exp = exp;
+		_hp = maxHp;
 	}
 	
 	public int getHp()
 	{
-		return hp;
+		return _hp;
+	}
+	
+	public String getName()
+	{
+		return _name;
 	}
 	
 	public Classe getClasse()
@@ -51,14 +56,14 @@ public class Personnage implements JoueurIntf {
 	public void Defense(int degats) {
 		if(classe.getArmure() - degats < 0 )
 		{
-			hp += classe.getArmure() - degats;
+			_hp += classe.getArmure() - degats;
 			System.out.println("Vous avez subit :" + (degats - classe.getArmure()) + "dégats." );
-			System.out.println("Points de vie restants : " + hp);
+			System.out.println("Points de vie restants : " + _hp);
 		}
 		else 
 		{
 			System.out.println("Vous n'avez subit aucun dégat !");
-			System.out.println("Points de vie restants : " + hp);
+			System.out.println("Points de vie restants : " + _hp);
 		}
 	}
 }

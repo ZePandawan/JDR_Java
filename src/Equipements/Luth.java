@@ -6,5 +6,6 @@ public class Luth extends Equipement{
 		degatM = 6;
 	    armure = 0;
 	    prix = 3;
+	    nom = "Luth";
 	}
 }

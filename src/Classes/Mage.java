@@ -16,7 +16,7 @@ public class Mage extends Classe{
 		Arme = new Baton();
 		Armure = new Armuredesoie();
 		
-		Description = "Le mage utilise ses sorts afin de carboniser ses ennemis";
+		Description = "Le mage utilise ses sorts afin de mettre en déroute ses ennemis";
 		
 		ArrayList<Attaque> ListeAttaquesPhysiques = new ArrayList<Attaque>();
 		ArrayList<Attaque> ListeAttaquesMagiques = new ArrayList<Attaque>();

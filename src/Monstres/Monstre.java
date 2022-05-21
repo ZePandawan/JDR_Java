@@ -3,14 +3,14 @@ import java.util.ArrayList;
 import Joueur.Personnage;
 
 public class Monstre {
+	
+	protected String Nom;
     protected int Sante = 0;
     protected int Degats;
     protected String _type;
-
     protected String Description = "";
 
     protected ArrayList<String> Attaques = new ArrayList<String>();
-
 
     public int getSante() {
         return this.Sante;

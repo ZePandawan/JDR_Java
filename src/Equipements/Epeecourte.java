@@ -6,6 +6,7 @@ public class Epeecourte extends Equipement{
         degatM = 2;
         armure = 0;
         prix = 7;
+        nom = "Épée courte";
     }
 }
 

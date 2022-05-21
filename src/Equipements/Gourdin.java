@@ -6,6 +6,7 @@ public class Gourdin extends Equipement{
         degatM = 1;
         armure = 0;
         prix = 2;
+        nom = "Gourdin";
     }
 }
 

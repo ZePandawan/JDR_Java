@@ -6,5 +6,6 @@ public class Coupdepoing extends Equipement{
         degatM = 5;
         armure = 0;
         prix = 0;
+        nom = "Poing";
     }
 }

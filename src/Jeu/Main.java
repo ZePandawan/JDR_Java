@@ -8,7 +8,7 @@ public class Main {
 		
 		Jeu Commande = new Jeu();
 		//Lancement du jeu
-		Commande.DebutJeu();
+		Commande.MenuPrincipal();
 		Commande.NettoyerConsole();
 		
 	}

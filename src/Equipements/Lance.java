@@ -6,6 +6,7 @@ public class Lance extends Equipement{
         degatM = 5;
         armure=0;
         prix = 6;
+        nom = "Lance";
     }
 }
 

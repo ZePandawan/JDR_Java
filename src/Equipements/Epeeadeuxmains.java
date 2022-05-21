@@ -6,5 +6,6 @@ public class Epeeadeuxmains extends Equipement{
         degatM = 4;
         armure = 0;
         prix = 9;
+        nom = "Épée à deux mains";
     }
 }
