@@ -54,14 +54,16 @@ public class Jeu extends Interface {
 			{
 				NettoyerConsole();
 				MenuAttaquesPhysiques(joueur, ennemi);
+				break;
 			}
 			case 2 :
 			{
 				NettoyerConsole();
 				MenuAttaquesMagiques(joueur, ennemi);
+				break;
 			}
 			default :
-			{}
+			{break;}
 		}
 	}
 	
@@ -81,17 +83,22 @@ public class Jeu extends Interface {
 			{
 				NettoyerConsole();
 				DescriptionAttaquesPhysiques(joueur, ennemi, 1);
+				break;
 			}
 			case 2 :
 			{
 				NettoyerConsole();
 				DescriptionAttaquesPhysiques(joueur, ennemi, 2);
+				break;
 			}
 			case 3 :
 			{
 				NettoyerConsole();
 				MenuCombat(joueur, ennemi);
+				break;
 			}
+			default :
+			{break;}
 		}
 	}
 	
@@ -121,7 +128,7 @@ public class Jeu extends Interface {
 						break;
 					}
 					default:
-					{}
+					{break;}
 				}
 			}
 			case 2:
@@ -131,7 +138,7 @@ public class Jeu extends Interface {
 				break;
 			}
 			default:
-			{}
+			{break;}
 		}
 	}
 	
@@ -151,17 +158,22 @@ public class Jeu extends Interface {
 			{
 				NettoyerConsole();
 				DescriptionAttaquesMagiques(joueur, ennemi, 1);
+				break;
 			}
 			case 2 :
 			{
 				NettoyerConsole();
 				DescriptionAttaquesMagiques(joueur, ennemi, 2);
+				break;
 			}
 			case 3 :
 			{
 				NettoyerConsole();
 				MenuCombat(joueur, ennemi);
+				break;
 			}
+			default :
+			{break;}
 		}
 	}
 	
@@ -191,7 +203,7 @@ public class Jeu extends Interface {
 						break;
 					}
 					default:
-					{}
+					{break;}
 				}
 			}
 			case 2:
@@ -201,7 +213,7 @@ public class Jeu extends Interface {
 				break;
 			}
 			default:
-			{}
+			{break;}
 		}
 	}		
 }

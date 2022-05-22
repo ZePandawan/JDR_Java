@@ -69,7 +69,7 @@ public class Intro extends Histoire {
 		Commande.NettoyerConsole();
 		Commande.AfficherEntete(122,  
 				      "\nAragorn : Commençons l'entrainement !"
-				    + "Aragorn : A toi l'honneur mon ami\n");
+				    + "\nAragorn : A toi l'honneur mon ami\n");
 		
 		Aragorn Aragorn = new Aragorn();
 		
@@ -96,14 +96,16 @@ public class Intro extends Histoire {
 						+ "Aragorn : Ce genre d'attaque n'a que très peu d'effet sur moi ! \n");
 				Commande.StopProgramme();
 				TutorielMenuCombat(joueur, ennemi);
+				break;
 			}
 			case 2 :
 			{
 				Commande.NettoyerConsole();
 				TutorielMenuAttaquesMagiques(joueur, ennemi);
+				break;
 			}
 			default :
-			{}
+			{break;}
 		}
 	}
 	
@@ -142,7 +144,7 @@ public class Intro extends Histoire {
 				break;
 			}
 			default :
-			{}
+			{break;}
 		}	
 	}
 	
@@ -176,7 +178,7 @@ public class Intro extends Histoire {
 						break;
 					}
 					default :
-					{}
+					{break;}
 				}
 				break;
 			}
@@ -187,7 +189,7 @@ public class Intro extends Histoire {
 				break;
 			}
 			default :
-			{}
+			{break;}
 		}
 	}
 	

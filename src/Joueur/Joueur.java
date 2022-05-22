@@ -32,14 +32,13 @@ public class Joueur extends Personnage {
 	
 	public void ChoixClasse(){
 		Commande.NettoyerConsole();
+		
 		Commande.AfficherSeparateur(122);
 		System.out.println("\nAragorn : Quel est votre classe de prédilection " + _name + " ?! \n");
-		
 		for(int i=0; i < Classes.length; i++) {
 			System.out.println("[" + (i+1) + "] " + Classes[i]);
 		}
 		System.out.println();
-		
 		Commande.AfficherSeparateur(122);
 		
 		int choix_classe = Commande.LectureInt("->", Classes.length);
@@ -74,7 +73,7 @@ public class Joueur extends Personnage {
 						break;
 					}
 					default :
-					{}
+					{break;}
 				}
 				break;
 			}
@@ -105,7 +104,7 @@ public class Joueur extends Personnage {
 						break;
 					}
 					default :
-					{}
+					{break;}
 				}
 				break;
 			}
@@ -136,7 +135,7 @@ public class Joueur extends Personnage {
 						break;
 					}
 					default :
-					{}
+					{break;}
 				}
 				break;
 			}
@@ -167,7 +166,7 @@ public class Joueur extends Personnage {
 						break;
 					}
 					default :
-					{}
+					{break;}
 				}
 				break;
 			}
@@ -198,7 +197,7 @@ public class Joueur extends Personnage {
 						break;
 					}
 					default :
-					{}
+					{break;}
 				}
 				break;
 			}
@@ -229,7 +228,7 @@ public class Joueur extends Personnage {
 						break;
 					}
 					default :
-					{}
+					{break;}
 				}
 				break;
 			}
@@ -260,7 +259,7 @@ public class Joueur extends Personnage {
 						break;
 					}
 					default :
-					{}
+					{break;}
 				}
 				break;
 			}
@@ -309,7 +308,7 @@ public class Joueur extends Personnage {
 						break;
 					}
 					default :
-					{}
+					{break;}
 				}
 				break;
 			}
@@ -337,7 +336,7 @@ public class Joueur extends Personnage {
 						break;
 					}
 					default :
-					{}
+					{break;}
 				}
 				break;
 			}
@@ -365,7 +364,7 @@ public class Joueur extends Personnage {
 						break;
 					}
 					default :
-					{}
+					{break;}
 				}
 				break;
 			}
@@ -393,7 +392,7 @@ public class Joueur extends Personnage {
 						break;
 					}
 					default :
-					{}
+					{break;}
 				}
 				break;
 			}
@@ -421,7 +420,7 @@ public class Joueur extends Personnage {
 						break;
 					}
 					default :
-					{}
+					{break;}
 				}
 				break;
 			}
@@ -449,7 +448,7 @@ public class Joueur extends Personnage {
 						break;
 					}
 					default :
-					{}
+					{break;}
 				}
 				break;
 			}
@@ -477,7 +476,7 @@ public class Joueur extends Personnage {
 						break;
 					}
 					default :
-					{}
+					{break;}
 				}
 				break;
 			}

@@ -51,7 +51,7 @@ public class Menu {
 				break;
 			}
 			default :
-			{}
+			{break;}
 		}
 	}
 	

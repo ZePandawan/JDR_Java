@@ -40,7 +40,7 @@ public class Histoire {
 				break;
 			}
 			default :
-			{}
+			{break;}
 		}
 		return joueur;
 	}
