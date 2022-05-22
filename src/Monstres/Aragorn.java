@@ -7,6 +7,7 @@ public class Aragorn extends Monstre {
 	public Aragorn() {
 		super();
 		Sante = 1;
+		Degats = 0;
 	}
 	
 	public String getType()

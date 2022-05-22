@@ -8,147 +8,6 @@ public class Jeu extends Interface {
 	
 	static Joueur joueur;
 	
-	public void MenuPrincipal()
-	{
-		NettoyerConsole();
-		AfficherEntete(30,
-				  "  LE SEIGNEUR DES ANNEAUX \n"
-				+ "   La quête de l'anneau");
-		StopProgramme();
-		
-		NettoyerConsole();
-		AfficherSeparateur(30);
-		System.out.println("[1] Nouvelle Partie");
-		System.out.println("[2] Charger Partie");
-		System.out.println("[3] Règle du jeu");
-		System.out.println("[4] Quitter");
-		AfficherSeparateur(30);
-		
-		int choix = LectureInt("->",4);
-		
-		switch(choix)
-		{
-			case 1 : 
-			{
-				NouvellePartie();
-				break;
-			}
-			case 2 :
-			{
-				//ChargerPartie();
-				break;
-			}
-			case 3 :
-			{
-				//RegleDuJeu();
-				break;
-			}
-			case 4 :
-			{
-				//Quitter();
-				break;
-			}
-			default :
-			{}
-		}
-	}
-	
-	public void NouvellePartie()
-	{
-		Introduction();
-	}
-	
-	public void Introduction()
-	{
-		NettoyerConsole();
-		AfficherSeparateur(122);
-		System.out.println(
-				  "                                                       INTRODUCTION                                                       \n\n"
-				+ "                    *Plongé dans vos pensées, vous repensez au chemin qui vous à ammené jusqu'ici...*                     \n"
-				+ "*Vous êtes aligné en rang avec une cinquante de personnes. Humains, Nains, Elfes, vous passez en analyse chaque personne.*\n"
-				+ "      *Nombreux d'entre eux sont des rescapés d'anciennes batailles, d'autres, des survivants de villages assiégés.*      \n"
-				+ "                          *Un chevalier fais son apparition et débute un discours à haute voix.*                          \n");
-		AfficherSeparateur(122);
-		
-		StopProgramme();
-		NettoyerConsole();
-		AfficherEntete(122,
-				  "\n??? : Vous n'êtes pas ici pour vous lamenter sur votre anciennes vies ! \n"
-				+ "??? : L'armée de Sauron s'approche à grand pas ! Et les orques sont quasiment aux portes de la ville ! \n"
-				+ "??? : Pour ceux qui ne me connaissent pas... Je suis Aragorn ! Fils d'Arathorn ! \n"
-				+ "Aragorn : Je serai votre commandant pendant le siège de cette ville ! \n\n"
-				+ "                               *Aragorn tourne le regard vers vous et vous pointe du doigt*                               \n"
-				+ "\nAragorn : Toi là ! Approche ! Nous allons voir si tu es digne de défendre cette ville !\n");
-		
-		StopProgramme();
-		DefPersonnage();
-		
-		NettoyerConsole();
-		AfficherEntete(122,  
-				  "\nAragorn : Bien ! Il est maintenant temps de te former à la bataille, suis moi " + joueur.getName() +"                     \n");
-		StopProgramme();
-		CombatIntro();
-		
-				
-	}
-	
-	public void DefPersonnage()
-	{
-		String nom;
-		
-		NettoyerConsole();
-		AfficherEntete(122, "\nAragorn : Quel est votre nom mon brave ?!\n");
-		System.out.print("-> Nom : ");
-		nom = scanner.next();
-
-		
-		NettoyerConsole();
-		AfficherEntete(122,"\nAragorn : Votre nom est " + nom + ". N'est-ce pas ? \n\n"
-				+ "[1] Oui ! \n"
-				+ "[2] Non ! \n");
-		int choix = LectureInt("->", 2);
-		
-		switch(choix)
-		{
-			case 1 :
-			{
-				joueur = new Joueur(nom);	
-				break;
-			}
-			case 2 :
-			{
-				System.out.println();
-				DefPersonnage();
-				break;
-			}
-			default :
-			{}
-		}
-	}
-	
-	public void CombatIntro() {
-		NettoyerConsole();
-		AfficherEntete(122,  
-				    "\nAragorn : Commence d'abord par te munir de ton/ta " + joueur.getClasse().getArme().getNom() + " ce sera ton seul moyen de survie pendant cette guerre.\n\n"
-				  + "             *Vous récupérez votre équipement, l'inspectez et vous préparez pour le début de l'entrainement*             \n\n"
-				  + "Aragorn : Tout au long de ton aventure, tu renconteras principalement 2 type de créatures. \n"
-				  + "Aragorn : Tu as d'abord les créatures dites 'Physique' comme toi ou moi. \n"
-				  + "Aragorn : Grâce à notre armure nous avons une résistance aux attaques physiques. \n"
-				  + "Aragorn : De l'autre côté les créatures 'Magique' ont une résistances aux attaques magiques. \n"
-				  + "Aragorn : Soit donc bien minutieux quant aux attaques que tu utilises.\n");
-		StopProgramme();
-		
-		NettoyerConsole();
-		AfficherEntete(122,  
-				      "\nAragorn : Commençons l'entrainement !"
-				    + "Aragorn : A toi l'honneur mon ami");
-		
-		Aragorn Aragorn = new Aragorn();
-		
-		MenuCombat(joueur, Aragorn);
-	}
-	
-	
 	public void Combat(Joueur joueur, Monstre ennemi, Attaque attaque)
 	{
 		NettoyerConsole();
@@ -237,104 +96,112 @@ public class Jeu extends Interface {
 	}
 	
 	public void DescriptionAttaquesPhysiques(Joueur joueur, Monstre ennemi, int choix){
-		boolean ValidationChoix = false;
-		do {
-			System.out.println("Validez vous votre attaque !?");
-			System.out.println("Description : " + joueur.getClasse().getAttaquesPhysiques().get(choix-1).getDescription());
-			System.out.println("[1] : Oui");
-			System.out.println("[2] : Non");
-			int choixValidation = LectureInt("->",2);
+		
+		AfficherEntete(30,
+				  "Validez vous votre attaque !?\n\n"
+				+ "Description : " + joueur.getClasse().getAttaquesPhysiques().get(choix-1).getDescription() + "\n\n"
+				+ "[1] : Oui \n"
+				+ "[2] : Non");
+		int choixValidation = LectureInt("->",2);
 			
-			if(choixValidation == 1) {
-				if(choix == 1)
+		switch(choixValidation)
+		{
+			case 1:
+			{
+				switch(choix)
 				{
-					Combat(joueur, ennemi, joueur.getClasse().getAttaquesPhysiques().get(0));
-				}
-				if(choix == 2)
-				{
-					Combat(joueur, ennemi, joueur.getClasse().getAttaquesPhysiques().get(1));
+					case 1:
+					{
+						Combat(joueur, ennemi, joueur.getClasse().getAttaquesPhysiques().get(0));
+						break;
+					}
+					case 2:
+					{
+						Combat(joueur, ennemi, joueur.getClasse().getAttaquesPhysiques().get(1));
+						break;
+					}
+					default:
+					{}
 				}
 			}
-			if(choixValidation == 2)
+			case 2:
 			{
 				NettoyerConsole();
 				MenuAttaquesPhysiques(joueur, ennemi);
+				break;
 			}
-		}while(ValidationChoix == false);
+			default:
+			{}
+		}
 	}
 	
 	public void MenuAttaquesMagiques(Joueur joueur, Monstre ennemi) {
-		boolean choixAttaque = false;
-		do {
-			System.out.println("Choisissez une attaque :");
-			for(int i = 0; i<joueur.getClasse().getAttaquesMagiques().size(); i++)
-			{
-				System.out.println("[" + (i+1) +"] : " + joueur.getClasse().getAttaquesMagiques().get(i).getNom());
-			}
-			System.out.println("[3] : Retour");
-			int choix = LectureInt("->",joueur.getClasse().getAttaquesMagiques().size()+1);
+		
+		System.out.println("Choisissez une attaque :");
+		for(int i = 0; i<joueur.getClasse().getAttaquesMagiques().size(); i++)
+		{
+			System.out.println("[" + (i+1) +"] : " + joueur.getClasse().getAttaquesMagiques().get(i).getNom());
+		}
+		System.out.println("[3] : Retour");
+		int choix = LectureInt("->",joueur.getClasse().getAttaquesMagiques().size()+1);
 			
-			if(choix == 1)
+		switch(choix)
+		{
+			case 1 :
 			{
 				NettoyerConsole();
 				DescriptionAttaquesMagiques(joueur, ennemi, 1);
 			}
-			
-			if(choix == 2)
+			case 2 :
 			{
 				NettoyerConsole();
 				DescriptionAttaquesMagiques(joueur, ennemi, 2);
 			}
-			if(choix == 3)
+			case 3 :
 			{
 				NettoyerConsole();
 				MenuCombat(joueur, ennemi);
 			}
-		}while(choixAttaque == false);
+		}
 	}
 	
 	public void DescriptionAttaquesMagiques(Joueur joueur, Monstre ennemi, int choix){
-		boolean ValidationChoix = false;
-		do {
-			System.out.println("Validez vous votre attaque !?");
-			System.out.println("Description : " + joueur.getClasse().getAttaquesMagiques().get(choix-1).getDescription());
-			System.out.println("[1] : Oui");
-			System.out.println("[2] : Non");
-			int choixValidation = LectureInt("->",2);
+		
+		AfficherEntete(30,
+				  "Validez vous votre attaque !?\n\n"
+				+ "Description : " + joueur.getClasse().getAttaquesMagiques().get(choix-1).getDescription() + "\n\n"
+				+ "[1] : Oui \n"
+				+ "[2] : Non");
+		int choixValidation = LectureInt("->",2);
 			
-			if(choixValidation == 1) {
-				if(choix == 1)
+		switch(choixValidation)
+		{
+			case 1:
+			{
+				switch(choix)
 				{
-					if(joueur.getClasse().getMana() >=1)
+					case 1:
 					{
-						NettoyerConsole();
 						Combat(joueur, ennemi, joueur.getClasse().getAttaquesMagiques().get(0));
+						break;
 					}
-					else
+					case 2:
 					{
-						System.out.println("Vous n'avez pas assez de mana !");
-						MenuAttaquesMagiques(joueur, ennemi);
-					}
-				}
-				if(choix == 2)
-				{
-					if(joueur.getClasse().getMana() >=2)
-					{
-						NettoyerConsole();
 						Combat(joueur, ennemi, joueur.getClasse().getAttaquesMagiques().get(1));
+						break;
 					}
-					else
-					{
-						System.out.println("Vous n'avez pas assez de mana !");
-						MenuAttaquesMagiques(joueur, ennemi);
-					}
+					default:
+					{}
 				}
 			}
-			if(choixValidation == 2)
+			case 2:
 			{
 				NettoyerConsole();
 				MenuAttaquesMagiques(joueur, ennemi);
+				break;
 			}
-		}while(ValidationChoix == false);
-	}
+			default:
+			{}
+		}
+	}		
 }

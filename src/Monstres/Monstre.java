@@ -5,10 +5,10 @@ import Joueur.Personnage;
 public class Monstre {
 	
 	protected String Nom;
-    protected int Sante = 0;
+    protected int Sante;
     protected int Degats;
     protected String _type;
-    protected String Description = "";
+    protected String Description;
 
     protected ArrayList<String> Attaques = new ArrayList<String>();
 
@@ -35,8 +35,11 @@ public class Monstre {
     
     public void Defend(int degats) {
 			Sante -= degats;
-			System.out.println("Le monstre a subit : " + degats + " dégats." );
+			
+			System.out.println("------------------------------");
+			System.out.println("L'ennemi a subit : " + degats + " dégats." );
 			System.out.println("Points de vie restants : " + Math.max(0,Sante));
+			System.out.println("------------------------------");
     }
     
     public String getType()

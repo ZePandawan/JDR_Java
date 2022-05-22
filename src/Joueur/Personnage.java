@@ -57,13 +57,18 @@ public class Personnage implements JoueurIntf {
 		if(classe.getArmure() - degats < 0 )
 		{
 			_hp += classe.getArmure() - degats;
+			
+			System.out.println("------------------------------");
 			System.out.println("Vous avez subit :" + (degats - classe.getArmure()) + "dégats." );
 			System.out.println("Points de vie restants : " + _hp);
+			System.out.println("------------------------------");
 		}
 		else 
 		{
+			System.out.println("------------------------------");
 			System.out.println("Vous n'avez subit aucun dégat !");
 			System.out.println("Points de vie restants : " + _hp);
+			System.out.println("------------------------------");
 		}
 	}
 }

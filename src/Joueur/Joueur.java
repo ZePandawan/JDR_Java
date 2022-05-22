@@ -487,8 +487,7 @@ public class Joueur extends Personnage {
 	public void Recapitulatif() {
 		Commande.NettoyerConsole();
 		Commande.AfficherEntete(122,
-				  "\nAragorn : Bien ! Nous avons fini votre contrat... Jetez-y un oeil " + _name + " !\n\n"
-				+ "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   \n"
+				  "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   \n"
 				+ "                                                    RECRUE DE GUERRE                                                     \n\n"
 				+ "     Nom : " + _name + "\n"																								
 				+ "     Vie : " + _hp + "\n"
