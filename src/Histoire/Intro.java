@@ -10,14 +10,12 @@ public class Intro extends Histoire {
 	public void Introduction(Joueur joueur)
 	{
 		Commande.NettoyerConsole();
-		Commande.AfficherSeparateur(122);
-		System.out.println(
+		Commande.AfficherEntete(122,
 				  "                                                       INTRODUCTION                                                       \n\n"
 				+ "                    *Plongé dans vos pensées, vous repensez au chemin qui vous à ammené jusqu'ici...*                     \n"
-				+ "*Vous êtes aligné en rang avec une cinquante de personnes. Humains, Nains, Elfes, vous passez en analyse chaque personne.*\n"
+				+ "*Vous êtes aligné en rang avec une cinquantaine de personnes. Humains, Nains, Elfes, vous passez en analyse chaque personne.*\n"
 				+ "      *Nombreux d'entre eux sont des rescapés d'anciennes batailles, d'autres, des survivants de villages assiégés.*      \n"
 				+ "                          *Un chevalier fais son apparition et débute un discours à haute voix.*                          \n");
-		Commande.AfficherSeparateur(122);
 		
 		Commande.StopProgramme();
 		Commande.NettoyerConsole();

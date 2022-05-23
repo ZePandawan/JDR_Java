@@ -26,22 +26,23 @@ public class Histoire {
 				+ "[2] Non ! \n");
 		int choix = Commande.LectureInt("->", 2);
 		
-		switch(choix)
+		
+		while(choix == 2)
 		{
-			case 1 :
-			{
-				joueur = new Joueur(nom);
-				return joueur;
-			}
-			case 2 :
-			{
-				System.out.println();
-				DefPersonnage(joueur);
-				break;
-			}
-			default :
-			{break;}
+			Commande.NettoyerConsole();
+			Commande.AfficherEntete(122, "\nAragorn : Quel est votre nom mon brave ?!\n");
+			System.out.print("-> Nom : ");
+			nom = scanner.next();
+
+			
+			Commande.NettoyerConsole();
+			Commande.AfficherEntete(122,"\nAragorn : Votre nom est " + nom + ". N'est-ce pas ? \n\n"
+					+ "[1] Oui ! \n"
+					+ "[2] Non ! \n");
+			choix = Commande.LectureInt("->", 2);
 		}
+		
+		joueur = new Joueur(nom);
 		return joueur;
 	}
 }

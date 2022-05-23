@@ -2,13 +2,16 @@ package Histoire;
 
 import Commandes.Interface;
 import Joueur.Joueur;
+import ModeLibre.Mode_Libre;
 
 public class Menu {
 	
 	static Joueur joueur;
 	
+	Mode_Libre Libre = new Mode_Libre();
 	Interface Commande = new Interface();
 	Intro Intro = new Intro();
+	Regles Regles = new Regles();
 	
 	public void MenuPrincipal()
 	{
@@ -19,14 +22,14 @@ public class Menu {
 		Commande.StopProgramme();
 		
 		Commande.NettoyerConsole();
-		Commande.AfficherSeparateur(30);
-		System.out.println("[1] Nouvelle Partie");
-		System.out.println("[2] Charger Partie");
-		System.out.println("[3] Règle du jeu");
-		System.out.println("[4] Quitter");
-		Commande.AfficherSeparateur(30);
+		Commande.AfficherEntete(30,
+				  "[1] Nouvelle Histoire \n"
+				+ "[2] Charger Histoire \n"
+				+ "[3] Mode Libre \n"
+				+ "[4] Règle du jeu \n"
+				+ "[5] Quitter");
 		
-		int choix = Commande.LectureInt("->",4);
+		int choix = Commande.LectureInt("->",5);
 		
 		switch(choix)
 		{
@@ -42,13 +45,17 @@ public class Menu {
 			}
 			case 3 :
 			{
-				//RegleDuJeu();
+				ModeLibre();
 				break;
 			}
 			case 4 :
 			{
-				//Quitter();
+				Afficher_Regle();
 				break;
+			}
+			case 5 :
+			{
+				System.exit(0);
 			}
 			default :
 			{break;}
@@ -58,5 +65,16 @@ public class Menu {
 	public void NouvellePartie()
 	{
 		Intro.Introduction(joueur);
+	}
+	
+	public void Afficher_Regle()
+	{
+		Regles.Afficher_Regles();
+		MenuPrincipal();
+	}
+	
+	public void ModeLibre()
+	{
+		Libre.ModeLibre();
 	}
 }
