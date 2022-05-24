@@ -9,8 +9,11 @@ public class Monstre {
     protected int Degats;
     protected String _type;
     protected String Description;
+    protected int Exp;
 
     protected ArrayList<String> Attaques = new ArrayList<String>();
+
+    public int getExp() { return this.Exp;}
 
     public int getSante() {
         return this.Sante;
@@ -37,7 +40,7 @@ public class Monstre {
 			Sante -= degats;
 			
 			System.out.println("------------------------------");
-			System.out.println("L'ennemi a subit : " + degats + " dégats." );
+			System.out.println("L'ennemi a subit : " + degats + " dï¿½gats." );
 			System.out.println("Points de vie restants : " + Math.max(0,Sante));
 			System.out.println("------------------------------");
     }

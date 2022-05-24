@@ -6,5 +6,6 @@ public class TestMonstre {
         System.out.println(monstre.getSante());
         System.out.println(monstre.getDescription());
         System.out.println(boss.getAttaques());
+        System.out.println(monstre.getExp());
     }
 }

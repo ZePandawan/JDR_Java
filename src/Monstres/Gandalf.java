@@ -1,5 +1,7 @@
 package Monstres;
 
+import java.util.Random;
+
 public class Gandalf extends Monstre {
 
 	private String type = "Magique";
@@ -7,6 +9,7 @@ public class Gandalf extends Monstre {
 	public Gandalf() {
 		super();
 		Sante = 1;
+		Exp = 10;
 	}
 	
 	public String getType()
