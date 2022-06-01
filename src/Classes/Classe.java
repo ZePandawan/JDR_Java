@@ -1,43 +1,82 @@
 package Classes;
 
+import Equipements.*;
+import java.util.Random;
 import java.util.ArrayList;
+import Attaque.*;
 
-public class Classe {
-	protected int Physique = 0;
-    protected int Social = 0;
-    protected int Mental = 0;
-	protected int Sante = 0;
-	protected int Mana = 0;
+public class Classe{
 	
-	protected String Description = "";
+	protected int Physique;
+    protected int Social;
+    protected int Mental;
+    
+	protected int Sante;
+	protected int Mana;
 	
-	protected ArrayList<String> Attaques = new ArrayList<String>();
+	protected Equipement Arme;
+	protected Equipement Armure;
+	
+	protected String Description;
+	
+	protected ArrayList<Attaque> AttaquesPhysiques;
+	protected ArrayList<Attaque> AttaquesMagiques;
+	
+	protected Random random = new Random();
+	
 	
 	public int getPhysique() {
-		return this.Physique;
+		return Physique;
 	}
 	
 	public int getSocial() {
-		return this.Social;
+		return Social;
 	}
 	
 	public int getMental() {
-		return this.Mental;
+		return Mental;
 	}
 	
 	public int getSante() {
-		return this.Sante;
+		return Sante;
 	}
 	
 	public int getMana() {
-		return this.Mana;
-	}
-	
-	public ArrayList<String> getAttaques(){
-		return this.Attaques;
-	}
+		return Mana;
+	}	
 	
 	public String getDescription() {
-		return this.Description;
+		return Description;
+	}
+	
+	public int getArmeDegatsP() {
+		return Arme.getDegatP();
+	}
+	
+	public int getArmeDegatsM() {
+		return Arme.getDegatM();
+	}
+	
+	public int getArmure() {
+		return Armure.getArmure();
+	}
+
+	public Equipement getArme()
+	{
+		return Arme;
+	}
+	
+	public int getClasseDegats() {
+		return 0;
+	}
+	
+	public ArrayList<Attaque> getAttaquesPhysiques()
+	{
+		return AttaquesPhysiques;
+	}
+	
+	public ArrayList<Attaque> getAttaquesMagiques()
+	{
+		return AttaquesMagiques;
 	}
 }

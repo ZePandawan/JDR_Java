@@ -1,4 +1,8 @@
 package Classes;
+import java.util.ArrayList;
+
+import Attaque.*;
+import Equipements.*;
 
 public class Guerrier extends Classe {
 	
@@ -9,9 +13,26 @@ public class Guerrier extends Classe {
 		Sante = 18;
 		Mana = 2;
 		
-		Attaques.add("Gantelet d'Argent");
-		Attaques.add("Attaque Rapide");
-		Attaques.add("Attaque Lourde");
-		Attaques.add("Volonté Divine");
+		Arme = Equipement.EpeeLongue;
+		Armure = Equipement.ArmureDePlaque;
+		
+		Description = "Le guerrier est la classe la plus basique, utiliser votre épée longue et votre armure afin de mettre vos ennemis en déroute.";
+		
+		ArrayList<Attaque> ListeAttaquesPhysiques = new ArrayList<Attaque>();
+		ArrayList<Attaque> ListeAttaquesMagiques = new ArrayList<Attaque>();
+		
+		ListeAttaquesPhysiques.add(new AttaqueSimple(this));
+		ListeAttaquesPhysiques.add(new AttaqueCharge(this));
+		ListeAttaquesMagiques.add(new PassageEnForce(this));
+		ListeAttaquesMagiques.add(new VolonteDivine(this));
+		
+		AttaquesPhysiques = ListeAttaquesPhysiques;
+		AttaquesMagiques = ListeAttaquesMagiques;
+		
+	}
+	
+	@Override
+	public int getClasseDegats() {
+		return random.nextInt(1, 7);
 	}
 }

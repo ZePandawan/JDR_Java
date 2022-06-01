@@ -1,4 +1,4 @@
-//Voici la liste des chose à faire :
+Voici la liste des chose à faire :
 
 Interface : 
   Menu_Principal :

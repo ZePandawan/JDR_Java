@@ -1,4 +1,8 @@
 package Classes;
+import java.util.ArrayList;
+
+import Attaque.*;
+import Equipements.*;
 
 public class Mage extends Classe{
 	
@@ -9,9 +13,26 @@ public class Mage extends Classe{
 		Sante = 8;
 		Mana = 12;
 		
-		Attaques.add("Coup de baton");
-		Attaques.add("Boule de Feu");
-		Attaques.add("Éclair");
-		Attaques.add("Libération de Chaos");
+		Arme = Equipement.BatonDeMage;
+		Armure = Equipement.ArmureDeSoie;
+		
+		Description = "Le mage utilise ses sorts afin de mettre en déroute ses ennemis";
+		
+		ArrayList<Attaque> ListeAttaquesPhysiques = new ArrayList<Attaque>();
+		ArrayList<Attaque> ListeAttaquesMagiques = new ArrayList<Attaque>();
+		
+		ListeAttaquesPhysiques.add(new AttaqueSimple(this));
+		ListeAttaquesPhysiques.add(new CoupBas(this));
+		ListeAttaquesMagiques.add(new FireBall(this));
+		ListeAttaquesMagiques.add(new Deflagration(this));
+		
+		AttaquesPhysiques = ListeAttaquesPhysiques;
+		AttaquesMagiques = ListeAttaquesMagiques;
+		
 	} 
+	
+	@Override
+	public int getClasseDegats() {
+		return random.nextInt(1, 5);
+	}
 }
