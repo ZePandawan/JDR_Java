@@ -11,7 +11,7 @@ import Races.Race;
 public class Personnage implements JoueurIntf {
 
 	protected String _name;
-	protected int _maxHp, _hp, _exp, _mana, _maxMana;
+	protected int _maxHp, _hp, _exp, _mana, _maxMana, _argent;
 	protected Race race;
 	protected Classe classe;
 	
@@ -19,13 +19,6 @@ public class Personnage implements JoueurIntf {
 	protected ArrayList<String> Inventaire = new ArrayList<String>();
 	
 	protected Commandes Commande = new Commandes();
-	
-	public Personnage(String name, int maxHp, int exp) {
-		_name = name;
-		_maxHp = maxHp;
-		_exp = exp;
-		_hp = maxHp;
-	}
 	
 	public int getManaMax()
 	{
@@ -56,21 +49,75 @@ public class Personnage implements JoueurIntf {
 		return _mana;
 	}	
 	
-	public void EnleverMana(int value)
+	public int getArgent()
 	{
-		_mana -= value;
+		return _argent;
 	}
+	
+	public void setArgent(String operateur, int argent)
+	{
+		if(operateur == "+")
+		{
+			_argent += argent;
+		}
+		if(operateur == "-")
+		{
+			_argent -= argent;
+		}
+		else {}
+	}
+	
+	public void setMana(String operateur, int mana)
+	{
+		if(operateur == "+")
+		{
+			if(_mana + mana < _maxMana)
+			{
+				_mana += mana;
+			}
+			else
+			{
+				_mana = _maxMana;
+			}
+		}
+		if(operateur == "-")
+		{
+			_mana -= mana;
+		}
+		else{}
+	}
+
 	
 	public void AttaqueEnnemi(Joueur attaquant, Ennemi cible, Attaque attaque){
 		
-		if(cible.getType() == attaque.getType())
+		if(attaque.getType() == "Magique")
 		{
-			cible.Defend(attaque.ValeurAttaque(attaquant) - 2 );
+			if(cible.getType() == attaque.getType())
+			{
+				cible.Defend(Math.max(0, attaque.ValeurAttaque(attaquant) - 2));
+			}
+			else
+			{
+				cible.Defend(attaque.ValeurAttaque(attaquant));
+			}
 		}
-		else
+		
+		
+		if(attaque.getType() == "Physique")
 		{
-			cible.Defend(attaque.ValeurAttaque(attaquant));
+			if(cible.getType() == attaque.getType())
+			{
+				cible.Defend(Math.max(0, attaque.ValeurAttaque() - 2));
+			}
+			else
+			{
+				cible.Defend(attaque.ValeurAttaque());
+			}
 		}
+		
+		
+		
+		
 		
 	}
 

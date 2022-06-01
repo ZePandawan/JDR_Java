@@ -16,9 +16,7 @@ public class Joueur extends Personnage {
 	boolean raceValide = false;
 	
 	//Constructeur Joueur
-	public Joueur(String name) {
-		super(name, 100, 0);
-		 
+	public Joueur(String name) {	 
 		_name = name;
 		
 		ChoixRace();
@@ -46,9 +44,12 @@ public class Joueur extends Personnage {
 			case 1 :
 			{
 				classe = new Archer();
-				_maxHp = classe.getSante();
 				_hp = classe.getSante();
+				_maxHp = classe.getSante();
 				_mana = classe.getMana();
+				_maxMana = classe.getMana();
+				_exp = 0;
+				_argent = 20;
 				numeroClasse = 0;
 				
 				Commande.NettoyerConsole();
@@ -77,10 +78,13 @@ public class Joueur extends Personnage {
 			case 2 :
 			{
 				classe = new Barbare();
-				_maxHp = classe.getSante();
 				_hp = classe.getSante();
+				_maxHp = classe.getSante();
 				_mana = classe.getMana();
-				numeroClasse = 0;
+				_maxMana = classe.getMana();
+				_exp = 0;
+				_argent = 20;
+				numeroClasse = 1;
 				
 				Commande.NettoyerConsole();
 				Commande.AfficherEntete(200,
@@ -108,10 +112,13 @@ public class Joueur extends Personnage {
 			case 3 :
 			{
 				classe = new Barde();
-				_maxHp = classe.getSante();
 				_hp = classe.getSante();
+				_maxHp = classe.getSante();
 				_mana = classe.getMana();
-				numeroClasse = 0;
+				_maxMana = classe.getMana();
+				_exp = 0;
+				_argent = 20;
+				numeroClasse = 2;
 				
 				Commande.NettoyerConsole();
 				Commande.AfficherEntete(200,
@@ -139,10 +146,13 @@ public class Joueur extends Personnage {
 			case 4 :
 			{
 				classe = new Guerrier();
-				_maxHp = classe.getSante();
 				_hp = classe.getSante();
+				_maxHp = classe.getSante();
 				_mana = classe.getMana();
-				numeroClasse = 0;
+				_maxMana = classe.getMana();
+				_exp = 0;
+				_argent = 20;
+				numeroClasse = 3;
 				
 				Commande.NettoyerConsole();
 				Commande.AfficherEntete(200,
@@ -170,10 +180,13 @@ public class Joueur extends Personnage {
 			case 5 :
 			{
 				classe = new Lutteur();
-				_maxHp = classe.getSante();
 				_hp = classe.getSante();
+				_maxHp = classe.getSante();
 				_mana = classe.getMana();
-				numeroClasse = 0;
+				_maxMana = classe.getMana();
+				_exp = 0;
+				_argent = 20;
+				numeroClasse = 4;
 				
 				Commande.NettoyerConsole();
 				Commande.AfficherEntete(200,
@@ -201,10 +214,13 @@ public class Joueur extends Personnage {
 			case 6 :
 			{
 				classe = new Mage();
-				_maxHp = classe.getSante();
 				_hp = classe.getSante();
+				_maxHp = classe.getSante();
 				_mana = classe.getMana();
-				numeroClasse = 0;
+				_maxMana = classe.getMana();
+				_exp = 0;
+				_argent = 20;
+				numeroClasse = 5;
 				
 				Commande.NettoyerConsole();
 				Commande.AfficherEntete(200,
@@ -232,10 +248,13 @@ public class Joueur extends Personnage {
 			case 7 :
 			{
 				classe = new Rodeur();
-				_maxHp = classe.getSante();
 				_hp = classe.getSante();
+				_maxHp = classe.getSante();
 				_mana = classe.getMana();
-				numeroClasse = 0;
+				_maxMana = classe.getMana();
+				_exp = 0;
+				_argent = 20;
+				numeroClasse = 6;
 				
 				Commande.NettoyerConsole();
 				Commande.AfficherEntete(200,
@@ -283,7 +302,7 @@ public class Joueur extends Personnage {
 		{
 			case 1 :
 			{
-				race = new Elfe();
+				race = Race.Elfe;
 				numeroRace = 0;
 				
 				Commande.NettoyerConsole();
@@ -311,8 +330,8 @@ public class Joueur extends Personnage {
 			}
 			case 2 :
 			{
-				race = new Ent();
-				numeroRace = 0;
+				race = Race.Ent;
+				numeroRace = 1;
 				
 				Commande.NettoyerConsole();
 				Commande.AfficherEntete(200,
@@ -339,8 +358,8 @@ public class Joueur extends Personnage {
 			}
 			case 3 :
 			{
-				race = new Gobelin();
-				numeroRace = 0;
+				race = Race.Gobelin;
+				numeroRace = 2;
 				
 				Commande.NettoyerConsole();
 				Commande.AfficherEntete(200,
@@ -367,8 +386,8 @@ public class Joueur extends Personnage {
 			}
 			case 4 :
 			{
-				race = new Hobbit();
-				numeroRace = 0;
+				race = Race.Hobbit;
+				numeroRace = 3;
 				
 				Commande.NettoyerConsole();
 				Commande.AfficherEntete(200,
@@ -395,8 +414,8 @@ public class Joueur extends Personnage {
 			}
 			case 5 :
 			{
-				race = new Humain();
-				numeroRace = 0;
+				race = Race.Humain;
+				numeroRace = 4;
 				
 				Commande.NettoyerConsole();
 				Commande.AfficherEntete(200,
@@ -423,8 +442,8 @@ public class Joueur extends Personnage {
 			}
 			case 6 :
 			{
-				race = new Maiar();
-				numeroRace = 0;
+				race = Race.Maiar;
+				numeroRace = 5;
 				
 				Commande.NettoyerConsole();
 				Commande.AfficherEntete(200,
@@ -451,8 +470,8 @@ public class Joueur extends Personnage {
 			}
 			case 7 :
 			{
-				race = new Orque();
-				numeroRace = 0;
+				race = Race.Orque;
+				numeroRace = 6;
 				
 				Commande.NettoyerConsole();
 				Commande.AfficherEntete(200,
@@ -487,8 +506,9 @@ public class Joueur extends Personnage {
 				  "    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~   \n"
 				+ "                                                    RECRUE DE GUERRE                                                     \n\n"
 				+ "     Nom : " + _name + "\n"																								
-				+ "     Vie : " + _hp + "\n"
-				+ "     Mana : " + _mana + "\n"
+				+ "     Vie : " + _hp + " / " + _maxHp + "\n"
+				+ "     Mana : " + _mana + " / " + _maxMana + "\n"
+				+ "     Argent : " + _argent + " PO \n"
 				+ "    \n"
 				+ "     Race : " + Races[numeroRace] + "\n"
 				+ "     Classe : " + Classes[numeroClasse] + "\n"

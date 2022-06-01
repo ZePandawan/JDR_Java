@@ -20,13 +20,13 @@ public class FireBall extends Attaque {
 		{
 			if(_classe.getMental() > random.nextInt(1, 100))
 			{
-				joueur.EnleverMana(1);
+				joueur.setMana("-",1);
 				_degats = _classe.getClasseDegats() + _classe.getArmeDegatsM() ;
 				return _degats;
 			}
 			else
 			{
-				joueur.EnleverMana(1);
+				joueur.setMana("-",1);
 				System.out.println("Votre attaque n'a pas aboutit");
 				return 0;
 			}
