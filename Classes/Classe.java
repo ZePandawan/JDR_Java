@@ -1,6 +1,6 @@
 package Classes;
 import Equipements.*;
-import java.util.Random;
+
 import java.util.ArrayList;
 
 import Attaque.*;
@@ -19,8 +19,6 @@ public class Classe{
 	
 	protected ArrayList<Attaque> AttaquesPhysiques;
 	protected ArrayList<Attaque> AttaquesMagiques;
-	
-	protected Random random = new Random();
 	
 	public String getDescription() {
 		return Description;
@@ -50,7 +48,10 @@ public class Classe{
 		return Mana;
 	}	
 	
-
+	public void EnleverMana(int value)
+	{
+		Mana -= value;
+	}
 	public int getArmeDegatsP() {
 		return Arme.getDegatP();
 	}

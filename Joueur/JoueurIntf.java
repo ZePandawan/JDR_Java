@@ -5,6 +5,6 @@ import Monstres.Monstre;
 
 public interface JoueurIntf {
 
-	void AttaqueEnnemi(Joueur attaquant, Monstre cible, Attaque attaque);
+	void AttaqueEnnemi(Monstre cible, Attaque attaque);
 	void Defense(int degats);
 }

@@ -1,5 +1,7 @@
 package Monstres;
 
+import java.util.Random;
+
 public class Gandalf extends Monstre {
 
 	private String type = "Magique";

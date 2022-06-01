@@ -32,6 +32,6 @@ public class Barbare extends Classe {
 	
 	@Override
 	public int getClasseDegats() {
-		return random.nextInt(1, 8);
+		return Math.max(1, (int) (Math.random() * 10) - 2);
 	}
 }

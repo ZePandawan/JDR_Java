@@ -6,12 +6,11 @@ import Histoire.*;
 public class Main {
 
 	public static void main(String[] args) {
+		shop test = new shop(300);
 		
-		Menu Jeu = new Menu();
-		Jeu Commande = new Jeu();
-		//Lancement du jeu
-		Jeu.MenuPrincipal();
-		Commande.NettoyerConsole();
+
+		test.acheterItem();
+		
 		
 	}
 

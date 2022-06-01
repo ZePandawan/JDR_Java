@@ -1,8 +1,5 @@
 package Monstres;
 import java.util.ArrayList;
-import java.util.Random;
-
-import Commandes.Interface;
 import Joueur.Personnage;
 
 public class Monstre {
@@ -13,11 +10,8 @@ public class Monstre {
     protected String _type;
     protected String Description;
     protected int Exp;
-    protected Random random = new Random();
 
     protected ArrayList<String> Attaques = new ArrayList<String>();
-    
-    protected Interface Commande = new Interface();
 
     public int getExp() { return this.Exp;}
 
@@ -45,9 +39,10 @@ public class Monstre {
     public void Defend(int degats) {
 			Sante -= degats;
 			
-			Commande.AfficherEntete(30, 
-					  "L'ennemi a subit : " + degats + " dégats. \n"
-					+ "Points de vie restants : " + Math.max(0,Sante) );
+			System.out.println("------------------------------");
+			System.out.println("L'ennemi a subit : " + degats + " dï¿½gats." );
+			System.out.println("Points de vie restants : " + Math.max(0,Sante));
+			System.out.println("------------------------------");
     }
     
     public String getType()

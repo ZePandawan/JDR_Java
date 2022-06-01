@@ -1,8 +1,5 @@
 package Attaque;
 import Classes.Classe;
-import Joueur.Joueur;
-
-import java.util.Random;
 
 public class Attaque {
 	
@@ -10,10 +7,8 @@ public class Attaque {
 	protected String _description;
 	protected int _degats;
 	protected String _type;
-	protected Random random = new Random();
-
-	protected Classe _classe;
-	protected Joueur _joueur;
+	
+	Classe _classe;
 	
 	public Attaque(Classe classe) {
 		_classe = classe;
@@ -21,11 +16,6 @@ public class Attaque {
 	
 	public String getNom() {
 		return _nom;
-	}
-	
-	public int ValeurAttaque(Joueur joueur)
-	{
-		return 0;
 	}
 	
 	public int ValeurAttaque()

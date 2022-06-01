@@ -33,6 +33,6 @@ public class Guerrier extends Classe {
 	
 	@Override
 	public int getClasseDegats() {
-		return random.nextInt(1, 7);
+		return Math.max(1, (int) (Math.random() * 10) - 3);
 	}
 }

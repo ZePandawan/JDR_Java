@@ -10,7 +10,7 @@ public class Ruee extends Attaque {
 	}
 	
 	public int ValeurAttaque() {
-		if((_classe.getPhysique() - 10) > random.nextInt(1, 100))
+		if((_classe.getPhysique() - 10)> ((int)Math.random() * 100))
 		{
 			_degats = _classe.getClasseDegats() + _classe.getArmeDegatsP() * 2;
 			return _degats;
@@ -21,4 +21,5 @@ public class Ruee extends Attaque {
 			return 0;
 		}
 	}
+
 }

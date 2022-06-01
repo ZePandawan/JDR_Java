@@ -18,6 +18,6 @@ public class Roublard extends Classe {
 	
 	@Override
 	public int getClasseDegats() {
-		return random.nextInt(1, 6);
+		return Math.max(0, (int) (Math.random() * 10) - 4);
 	}
 }

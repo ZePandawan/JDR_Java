@@ -30,16 +30,12 @@ public class Intro extends Histoire {
 		Commande.StopProgramme();
 		joueur = DefPersonnage(joueur);
 		
-		Commande.StopProgramme();
 		Commande.AfficherEntete(122,  
 				    "\nAragorn : Bien ! Maintenant que votre contrat est terminé \n"
 				  + "Aragorn : Il est maintenant temps de te former à la bataille, suis moi " + joueur.getName() +" !                    \n");
 		Commande.StopProgramme();
 		CombatIntro(joueur);
 		
-		
-		Commande.StopProgramme();
-		Commande.NettoyerConsole();
 		Commande.AfficherEntete(122,  
 				   "\nAragorn : Beau travail " + joueur.getName() +"                     \n"
 				 + "Aragorn : Maintenant que tu t'es prouvé légitime de défendre cette ville, je vais t'attribuer une mission.\n"
@@ -53,11 +49,6 @@ public class Intro extends Histoire {
 				 + "Aragorn : Toutes ses troupes seront concentrées ici, tu auras donc un avantage.\n"
 				 + "Aragorn : Tu auras 4 jours de voyages, nous te fournirons armes, armure, vivre et monture.\n"
 				 + "Aragorn : Nous comptons sur toi mon ami ! \n");
-		Commande.StopProgramme();
-		
-		
-		Chapitre_1 Chp1 = new Chapitre_1();
-		Chp1.Chapitre1(joueur);
 				
 	}
 	
@@ -101,6 +92,7 @@ public class Intro extends Histoire {
 				Commande.AfficherEntete(122,
 						  "\nAragorn : N'oublies pas que je suis une créature Physique ! \n"
 						+ "Aragorn : Ce genre d'attaque n'a que très peu d'effet sur moi ! \n");
+				Commande.StopProgramme();
 				TutorielMenuCombat(joueur, ennemi);
 				break;
 			}
@@ -117,12 +109,16 @@ public class Intro extends Histoire {
 	
 	public void TutorielMenuAttaquesMagiques(Joueur joueur, Monstre ennemi)
 	{
-		Commande.AfficherEntete(30, 
-				  "Choisissez une attaque : \n"
-				+ "[1] : " + joueur.getClasse().getAttaquesMagiques().get(0).getNom() + "\n"
-				+ "[2] : " + joueur.getClasse().getAttaquesMagiques().get(1).getNom() + "\n"
-				+ "[3] : Retour");
-		int choix = Commande.LectureInt("->",3);
+		System.out.println("------------------------------");
+		System.out.println("Choisissez une attaque :");
+		for(int i = 0; i<joueur.getClasse().getAttaquesMagiques().size(); i++)
+		{
+			System.out.println("[" + (i+1) +"] : " + joueur.getClasse().getAttaquesMagiques().get(i).getNom());
+		}
+		System.out.println("[3] : Retour");
+		System.out.println("------------------------------");
+		
+		int choix = Commande.LectureInt("->",joueur.getClasse().getAttaquesMagiques().size()+1);	
 			
 		switch(choix)
 		{
@@ -202,17 +198,12 @@ public class Intro extends Histoire {
 				  "    Début de l'attaque !\n"
 				+ "     Tour du Joueur ! ");
 		
-		joueur.AttaqueEnnemi(joueur, ennemi, attaque);
-		
-		Commande.DebugScanner();
+		joueur.AttaqueEnnemi(ennemi, attaque);
 		Commande.StopProgramme();
-		Commande.NettoyerConsole();
 		
 		if(ennemi.getSante() <= 0) 
 		{
-			Commande.AfficherEntete(30, 
-					  "   Le monstre est mort ! \n"
-					+ "   Vous êtes victorieux !");
+			System.out.println("Le monstre est mort ! Vous êtes victorieux !!!");
 			joueur.Recapitulatif();
 		}
 		else

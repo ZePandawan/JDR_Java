@@ -4,7 +4,7 @@ import Classes.Classe;
 public class TirTriple extends Attaque{
 	public TirTriple(Classe classe) {
 		super(classe);
-		_description = "Tir trois flèches à la suite";
+		_description = "Tir trois flèches à la suite (1 Mana)";
 		_nom = "Triple Tir";
 		_type = "Physique";
 	}
@@ -16,7 +16,7 @@ public class TirTriple extends Attaque{
 		
 		for(int i = 0; i<3; i++)
 		{
-			if((_classe.getPhysique()) > random.nextInt(1, 100))
+			if((_classe.getPhysique())> ((int)Math.random() * 100))
 			{
 				_degats = _classe.getClasseDegats() + _classe.getArmeDegatsM() ;
 				degats_fleche =+ _classe.getArmeDegatsM();

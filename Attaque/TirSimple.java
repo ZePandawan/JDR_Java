@@ -10,7 +10,7 @@ public class TirSimple extends Attaque {
 	}
 	
 	public int ValeurAttaque() {
-		if((_classe.getPhysique())> random.nextInt(1, 100))
+		if((_classe.getPhysique())> ((int)Math.random() * 100))
 		{
 			_degats = _classe.getClasseDegats() + _classe.getArmeDegatsP();
 			return _degats;
@@ -21,4 +21,5 @@ public class TirSimple extends Attaque {
 			return 0;
 		}
 	}
+
 }

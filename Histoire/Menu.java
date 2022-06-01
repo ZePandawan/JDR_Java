@@ -6,7 +6,7 @@ import ModeLibre.Mode_Libre;
 
 public class Menu {
 	
-	protected static Joueur joueur;
+	static Joueur joueur;
 	
 	Mode_Libre Libre = new Mode_Libre();
 	Interface Commande = new Interface();

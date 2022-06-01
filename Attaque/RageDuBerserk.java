@@ -10,12 +10,12 @@ public class RageDuBerserk extends Attaque {
 	}
 	
 	public int ValeurAttaque() {
-		int coups = random.nextInt(1, 5);
+		int coups = Math.max(1,((int)Math.random()* 10) - 6);
 		int degats_fin = 0;
 		
 		for(int i = 0; i < coups; i++)
 		{
-			if((_classe.getPhysique() - 10) > random.nextInt(1, 100))
+			if((_classe.getPhysique() - 10)> ((int)Math.random() * 100))
 			{
 				degats_fin += _classe.getClasseDegats() + _classe.getArmeDegatsP() * 2;
 			}
@@ -28,4 +28,5 @@ public class RageDuBerserk extends Attaque {
 		_degats = degats_fin;
 		return _degats;
 	}
+
 }

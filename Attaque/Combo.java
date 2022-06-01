@@ -10,12 +10,12 @@ public class Combo extends Attaque {
 	}
 	
 	public int ValeurAttaque() {
-		int coups = random.nextInt(1, 8);
+		int coups = Math.max(1,((int)Math.random()* 10) -2);
 		int degats_coups = 0;
 		
 		for(int i = 0; i < coups; i++)
 		{
-			if((_classe.getPhysique() - 10) > random.nextInt(1, 100))
+			if((_classe.getPhysique() - 10)> ((int)Math.random() * 100))
 			{
 				degats_coups += _classe.getArmeDegatsP() * 4;
 			}
@@ -28,4 +28,5 @@ public class Combo extends Attaque {
 		_degats = _classe.getClasseDegats() + degats_coups;
 		return _degats;
 	}
+
 }

@@ -1,6 +1,5 @@
 package Attaque;
 import Classes.Classe;
-import Joueur.Joueur;
 
 public class TirGuide extends Attaque {
 	public TirGuide(Classe classe) {
@@ -10,26 +9,23 @@ public class TirGuide extends Attaque {
 		_type = "Magique";
 	}
 	
-	public int ValeurAttaque(Joueur joueur) {
-		if(joueur.getMana() < 1)
+	public int ValeurAttaque() {
+		if(_classe.getMana() < 1)
 		{
 			System.out.println("Vous n'avez pas assez de mana ! ");
 			return 0;
 		}
+		if((_classe.getMental() > ((int)Math.random() * 100)))
+		{
+			_classe.EnleverMana(1);
+			_degats = _classe.getClasseDegats() + _classe.getArmeDegatsM() ;
+			return _degats;
+		}
 		else
 		{
-			if(_classe.getMental() > random.nextInt(1, 100))
-			{
-				joueur.EnleverMana(1);
-				_degats = _classe.getClasseDegats() + _classe.getArmeDegatsM() ;
-				return _degats;
-			}
-			else
-			{
-				joueur.EnleverMana(1);
-				System.out.println("Votre attaque n'a pas aboutit");
-				return 0;
-			}
+			_classe.EnleverMana(1);
+			System.out.println("Votre attaque n'a pas aboutit");
+			return 0;
 		}
 	}
 

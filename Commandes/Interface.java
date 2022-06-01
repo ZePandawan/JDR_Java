@@ -41,12 +41,8 @@ public class Interface {
 	}
 	
 	public void StopProgramme() {
-		System.out.print("\n Entrer '' pour continuer : ");
-		scanner.nextLine();
-	}
-	
-	public void DebugScanner() {
-		scanner.nextLine();
+		System.out.print("\n Entrer 'a' pour continuer : ");
+		scanner.next();
 	}
 
 }

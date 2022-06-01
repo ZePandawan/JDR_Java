@@ -1,6 +1,5 @@
 package Histoire;
 
-import java.util.Random;
 import java.util.Scanner;
 
 import Commandes.*;
@@ -9,9 +8,7 @@ import Joueur.Joueur;
 public class Histoire {
 	
 	protected static Scanner scanner = new Scanner(System.in);
-	protected Jeu Commande = new Jeu();
-	protected Random random = new Random();
-
+	protected Interface Commande = new Interface();
 	
 	public Joueur DefPersonnage(Joueur joueur)
 	{

@@ -8,61 +8,44 @@ public class Jeu extends Interface {
 	
 	static Joueur joueur;
 	
-	public Joueur Combat(Joueur joueur, Monstre ennemi, Attaque attaque)
+	public void Combat(Joueur joueur, Monstre ennemi, Attaque attaque)
 	{
 		NettoyerConsole();
-		AfficherEntete(30, 
-				  "     Début de l'attaque \n"
-				+ "       Tour du Joueur !");
+		System.out.println("Début de l'attaque ");
+		System.out.println("Tour du Joueur ! ");
 		
-		DebugScanner();
+		joueur.AttaqueEnnemi(ennemi, attaque);
 		StopProgramme();
-		NettoyerConsole();
 		
-		joueur.AttaqueEnnemi(joueur, ennemi, attaque);
-
 		if(ennemi.getSante() <= 0) {
-			
-			AfficherEntete(30,"Le monstre est mort ! Vous êtes victorieux !!!");
-			StopProgramme();
-			NettoyerConsole();
-			
+			System.out.println("Le monstre est mort ! Vous êtes victorieux !!!");
 			joueur.Recapitulatif();
-			
-			return joueur;
+			return;
 		}
 		else
 		{
 			NettoyerConsole();
-			AfficherEntete(30, "       Tour du monstre ! ");
-			StopProgramme();
-			
+			System.out.println("Tour du monstre ! ");
 			ennemi.Attaque(joueur);
-			
+			StopProgramme();
 			if(joueur.getHp() <= 0) {
-				
-				AfficherEntete(30,"Le monstre a réussi a vous tuer... Game Over !");
-				StopProgramme();
-				
+				System.out.println("Le montre à réussi a vous tuer... Game Over !");
 				joueur.Recapitulatif();
-				
-				return joueur;
+				return;
 			}
 		}
 		NettoyerConsole();
 		MenuCombat(joueur, ennemi);
-		return joueur;
 	}
 	
 	public void MenuCombat(Joueur joueur, Monstre ennemi) 
 	{
 		NettoyerConsole();
-		
-		AfficherEntete(30, 
-				  "Choisissez une action : \n"
-				+ "[1] : Attaque Physique \n"
-				+ "[2] : Attaque Magique");
+		System.out.println("Choisissez une action :");
+		System.out.println("[1] : Attaque Physique");
+		System.out.println("[2] : Attaque Magique");
 		//System.out.println("[3] : Sac");
+		//System.out.println("[4] : Parade / Esquive");
 		int choix = LectureInt("->", 2);
 			
 		switch(choix)
@@ -84,14 +67,15 @@ public class Jeu extends Interface {
 		}
 	}
 	
-	public void MenuAttaquesPhysiques(Joueur joueur, Monstre ennemi) 
-	{
-		AfficherEntete(30, 
-				  "Choisissez une attaque : \n"
-				+ "[1] : " + joueur.getClasse().getAttaquesPhysiques().get(0).getNom() + "\n"
-				+ "[2] : " + joueur.getClasse().getAttaquesPhysiques().get(1).getNom() + "\n"
-				+ "[3] : Retour");
-		int choix = LectureInt("->",3);
+	public void MenuAttaquesPhysiques(Joueur joueur, Monstre ennemi) {
+
+		System.out.println("Choisissez une attaque :");
+		for(int i = 0; i<joueur.getClasse().getAttaquesPhysiques().size(); i++)
+		{
+			System.out.println("[" + (i+1) +"] : " + joueur.getClasse().getAttaquesPhysiques().get(i).getNom());
+		}
+		System.out.println("[3] : Retour");
+		int choix = LectureInt("->",joueur.getClasse().getAttaquesPhysiques().size()+1);
 			
 		switch(choix)
 		{
@@ -160,12 +144,13 @@ public class Jeu extends Interface {
 	
 	public void MenuAttaquesMagiques(Joueur joueur, Monstre ennemi) {
 		
-		AfficherEntete(30, 
-				  "Choisissez une attaque : \n"
-				+ "[1] : " + joueur.getClasse().getAttaquesMagiques().get(0).getNom() + "\n"
-				+ "[2] : " + joueur.getClasse().getAttaquesMagiques().get(1).getNom() + "\n"
-				+ "[3] : Retour");
-		int choix = LectureInt("->",3);
+		System.out.println("Choisissez une attaque :");
+		for(int i = 0; i<joueur.getClasse().getAttaquesMagiques().size(); i++)
+		{
+			System.out.println("[" + (i+1) +"] : " + joueur.getClasse().getAttaquesMagiques().get(i).getNom());
+		}
+		System.out.println("[3] : Retour");
+		int choix = LectureInt("->",joueur.getClasse().getAttaquesMagiques().size()+1);
 			
 		switch(choix)
 		{
