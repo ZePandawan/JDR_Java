@@ -1,37 +1,51 @@
 package Commandes;
 
-public interface Commandes {
+import java.util.Scanner;
 
-	//Commandes de la partie "Interface"
+public class Commandes implements CommandesIntf {
+	static Scanner scanner = new Scanner(System.in);
 	
-	/*
-	 *Permet de récupérer le choix fais par l'utilisateur
-	 * Comme argument on informera la chaine de caractère correspondante au choix, ainsi qu'une valeur entière du nombre de choix possible.
-	 */
-	public int LectureInt(String choix, int choixUtilisateur);
+	public int LectureInt(String choix, int choixUtilisateur) {
+		int entree;
+		
+		do {
+			System.out.print(choix);
+			try {
+				entree = Integer.parseInt(scanner.next());
+			}catch(Exception e) {
+				entree = -1;
+				System.out.println("Veuillez rentrer une valeur entière !");
+			}
+		}while(entree < 1 || entree > choixUtilisateur);
+		return entree;
+	}
+
+	public void NettoyerConsole() {
+		for(int i = 0; i<5; i++) {
+			System.out.println();
+		}
+	}
 	
+	public void AfficherSeparateur(int n) {
+		for(int i=0; i<n; i++ ) {
+			System.out.print("-");
+		}
+		System.out.println();
+	}
 	
-	/*
-	 *Permet de nettoyer l'affichage de la console afin de rentre l'interface plus visible et ordonné.
-	 */
-	public  void NettoyerConsole();
+	public void AfficherEntete(int nombre, String texte) {
+		AfficherSeparateur(nombre);
+		System.out.println(texte);
+		AfficherSeparateur(nombre);
+	}
 	
+	public void StopProgramme() {
+		System.out.print("\n Entrer '' pour continuer : ");
+		scanner.nextLine();
+	}
 	
-	/*
-	 *Permet d'afficher des séparateurs permettant de donner un rendu comme celui ci dessous :
-	 * --------------------     <--- Utilisation de la méthode AfficherSéparateur() avec n = 20
-	 * RPG TLOTR
-	 * --------------------
-	 */
-	public void AfficherSeparateur(int n);
-	
-	/*
-	 * Permet d'afficher un entête, avec un titre
-	 */
-	public void AfficherEntete(String titre);
-	
-	/*
-	 * Permet au programme de faire une pause dans l'histoire, laissant à l'utilisateur le temps de réfléchir ou autre.
-	 */
-	public void StopProgramme();
+	public void DebugScanner() {
+		scanner.nextLine();
+	}
+
 }

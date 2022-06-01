@@ -1,17 +1,15 @@
 package Jeu;
 
-import Commandes.*;
+import Histoire.*;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		Jeu Commande = new Jeu();
+		Menu Jeu = new Menu();
+		
 		//Lancement du jeu
-		Commande.DebutJeu();
-		Commande.NettoyerConsole();
-		
-		
+		Jeu.MenuPrincipal();
 	}
 
 }

@@ -1,4 +1,5 @@
 package Classes;
+import Equipements.*;
 
 public class Roublard extends Classe {
 	
@@ -8,10 +9,15 @@ public class Roublard extends Classe {
 	    Mental = 50;
 		Sante = 14;
 		Mana = 6;
+
+		Arme =  Equipement.Dague;
+		Armure = Equipement.ArmureDeCuir;
 		
-		Attaques.add("Attaque Rapide");
-		Attaques.add("Attaque Sournoise");
-		Attaques.add("Frappe de l'ombre");
-		Attaques.add("Apparition Sanguinaire");
+		Description = "Le Roublard est un assassin de l'ombre. Attaquer son ennemi dans le dos et tendre des embuscades est son mode opératoire.";
+	}
+	
+	@Override
+	public int getClasseDegats() {
+		return random.nextInt(1, 6);
 	}
 }

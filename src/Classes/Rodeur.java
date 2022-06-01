@@ -1,4 +1,8 @@
 package Classes;
+import java.util.ArrayList;
+
+import Attaque.*;
+import Equipements.*;
 
 public class Rodeur extends Classe {
 	
@@ -9,9 +13,25 @@ public class Rodeur extends Classe {
 		Sante = 16;
 		Mana = 4;
 		
-		Attaques.add("Tir d'Arbalette");
-		Attaques.add("Parade Sanglante");
-		Attaques.add("Tir Nourit");
-		Attaques.add("Bombe explosive");
+		Arme = Equipement.EpeeCourte;
+		Armure = Equipement.CotteDeMaille;
+		
+		Description = "Le rodeur est un assassin silencieux, pistant son adversaire pour lui tendre un piège redoutable.";
+		
+		ArrayList<Attaque> ListeAttaquesPhysiques = new ArrayList<Attaque>();
+		ArrayList<Attaque> ListeAttaquesMagiques = new ArrayList<Attaque>();
+		
+		ListeAttaquesPhysiques.add(new AttaqueSimple(this));
+		ListeAttaquesPhysiques.add(new Ruee(this));
+		ListeAttaquesMagiques.add(new Teleportation(this));
+		ListeAttaquesMagiques.add(new AttaqueDesOmbres(this));
+		
+		AttaquesPhysiques = ListeAttaquesPhysiques;
+		AttaquesMagiques = ListeAttaquesMagiques;
+	}
+	
+	@Override
+	public int getClasseDegats() {
+		return random.nextInt(1, 6);
 	}
 }

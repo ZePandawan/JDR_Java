@@ -1,4 +1,8 @@
 package Classes;
+import java.util.ArrayList;
+
+import Attaque.*;
+import Equipements.*;
 
 public class Barbare extends Classe {
 	
@@ -9,9 +13,25 @@ public class Barbare extends Classe {
 		Sante = 16;
 		Mana = 4;
 		
-		Attaques.add("Coup Foudrayant");
-		Attaques.add("Coup de Hache");
-		Attaques.add("Lancer de Hache");
-		Attaques.add("Rage du Berserk");
+		Arme = Equipement.HacheDouble;
+		Armure = Equipement.ArmureDeCuir;
+		
+		Description = "Le barbare est un guerrier sanguinaire utilisant principalement une hache à deux mains.";
+		
+		ArrayList<Attaque> ListeAttaquesPhysiques = new ArrayList<Attaque>();
+		ArrayList<Attaque> ListeAttaquesMagiques = new ArrayList<Attaque>();
+		
+		ListeAttaquesPhysiques.add(new AttaqueSimple(this));
+		ListeAttaquesPhysiques.add(new 	RageDuBerserk(this));
+		ListeAttaquesMagiques.add(new AnimalTotem(this));
+		ListeAttaquesMagiques.add(new VolonteDOdin(this));
+		
+		AttaquesPhysiques = ListeAttaquesPhysiques;
+		AttaquesMagiques = ListeAttaquesMagiques;
+	}
+	
+	@Override
+	public int getClasseDegats() {
+		return random.nextInt(1, 8);
 	}
 }
