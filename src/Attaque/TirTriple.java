@@ -18,9 +18,9 @@ public class TirTriple extends Attaque{
 		{
 			if((_classe.getPhysique()) > random.nextInt(1, 100))
 			{
-				_degats = _classe.getClasseDegats() + _classe.getArmeDegatsM() ;
-				degats_fleche =+ _classe.getArmeDegatsM();
-				degats_totaux = _degats + degats_fleche;
+				_degats = _classe.getClasseDegats();
+				degats_fleche = _classe.getArmeDegatsP();
+				degats_totaux += degats_totaux + _degats + degats_fleche;
 			}
 			else
 			{}

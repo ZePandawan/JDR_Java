@@ -20,13 +20,13 @@ public class TremblementTerre extends Attaque {
 		{
 			if((_classe.getMental() - 10) > random.nextInt(1, 100))
 			{
-				joueur.EnleverMana(2);
+				joueur.setMana("-",2);
 				_degats = _classe.getClasseDegats() + _classe.getArmeDegatsM() * 2;
 				return _degats;
 			}
 			else
 			{
-				joueur.EnleverMana(2);
+				joueur.setMana("-",2);
 				System.out.println("Votre attaque n'a pas aboutit");
 				return 0;
 			}

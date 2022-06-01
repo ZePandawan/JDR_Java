@@ -14,6 +14,8 @@ public class Classe{
 	protected int Sante;
 	protected int Mana;
 	
+	protected int Argent;
+	
 	protected Equipement Arme;
 	protected Equipement Armure;
 	
