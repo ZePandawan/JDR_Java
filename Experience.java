@@ -20,8 +20,10 @@ public class Experience {
         	{
         		 joueur.getXp().setLevel(joueur.getXp().getLevel() + 1);
                  joueur.getXp().setXp(joueur.getXp().getXp() - 100);
-                 joueur.setMaxHp(joueur.getMaxHp()+5);
+                 joueur.setMaxHp(joueur.getMaxHp()+2);
                  joueur.setHp(joueur.getMaxHp());
+                 joueur.setManaMax(joueur.getManaMax()+2);
+                 joueur.setMana(joueur.getManaMax());
                  System.out.println("passage de niveau");
                  System.out.println("gain de "+ ennemi.getExp() +"xp");
         	}
